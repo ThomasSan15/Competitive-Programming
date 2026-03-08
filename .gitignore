@@ -1,0 +1,18 @@
+# VS Code
+.vscode/
+
+# ejecutables
+*.out
+*.exe
+*.o
+*.a
+
+# archivos de compilación
+*.class
+
+# archivos temporales
+*.log
+
+# archivos de test
+input.txt
+output.txt
