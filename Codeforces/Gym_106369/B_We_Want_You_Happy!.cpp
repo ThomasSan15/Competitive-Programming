@@ -11,16 +11,14 @@ int main(){
      
     cin >> custom >> arrival  >> ServiceTime >> PatienTime;
      if(time != 0){
-        if((arrival + PatienTime) < time ){
-          
-        }else{
+        if((arrival + PatienTime) >= time ){
             cout << custom << endl;
-            time = arrival + ServiceTime;
-        }
+             time = max(time, arrival) + ServiceTime;
+            }
      }else{
         cout << custom << endl;
          time = arrival + ServiceTime;
      }
-    
 }   
+return 0;
 }
