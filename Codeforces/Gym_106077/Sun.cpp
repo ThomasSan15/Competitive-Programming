@@ -14,9 +14,6 @@ int main(){
         cin >> value;
         a.push_back(value);
     }
-    /*for(int i = 0; i <= a.size() - 1; i++){
-        cout << a.at(i) << " -> ";
-    }*/
 
     value = 0;
     for(; k >= 0; k--){
