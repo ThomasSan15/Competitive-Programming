@@ -26,10 +26,9 @@ const int MOD = 1e9 + 7;
 
 int main() {
     fastio
-
+    
     int t = 1;
     // cin >> t;   // usar si hay múltiples casos
-
     while (t--) {
        
     }
