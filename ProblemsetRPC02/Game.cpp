@@ -12,10 +12,13 @@ int main(){
         cin >> v;
         m.push_back(v);
     }
-
-    while(true){
-        if()
+    
+    for(int i = 0; i < m.size() - 1; i++){
+        if(m.at(i) % 2 == 0){
+            
+        }
     }
+    
 
     
 }
