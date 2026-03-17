@@ -4,13 +4,14 @@
 using namespace std;
 
 int main(){
-    int n = 0;
+    int n = 0 , a = 0, b = 0;
     cin >> n; 
     int v = 0;
     vector<int> m;
-    for(; n > 0; n--){
-        cin >> v;
-        m.push_back(v);
+
+    for(int i = 0; n > 0; n--, i++){
+    
+        cin >> m[i];
     }
     
     for(int i = 0; i < m.size() - 1; i++){
@@ -19,6 +20,8 @@ int main(){
         }
     }
     
-
+    if(a + b >= 10){
+        b = (a + b) % 10;
+    }
     
 }
