@@ -22,6 +22,7 @@ int main(){
      string s;
      char p;
      cin >> s;
+     
     int value = 0;
     for(int i = 0, j = s.size() - 1; i < j; i++){
         for(; j > i; j--){
