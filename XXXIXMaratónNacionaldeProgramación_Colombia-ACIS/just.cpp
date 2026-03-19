@@ -21,7 +21,8 @@ string reformed(string a){
 for(int i = 0; i < a.size() - 1; i++){
        if(a.at(i) >= 65 && a.at(i) <= 90){
          a.at(i) += 32;
+       }else{
+        a.erase(i);
        }
     }
-
 }
