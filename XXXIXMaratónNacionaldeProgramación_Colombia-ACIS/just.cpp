@@ -5,10 +5,10 @@
 using namespace std;
 
 int palindrome(string a){
-
-    for(int i = 0, j = a.size() - 1; i != j;){
-        if(a.at(i) != ('.' || ',' || '!' || ':')){
-          if(a.at(j) != ('.' || ',' || '!' || ':')){
+    
+    for(int i = 0, j = a.size() - 1; i != j;){ 
+        if(a.at(i) <= 122 && a.at(i) >= 97){
+          if(a.at(j) <= 122 && a.at(j) >= 97){
        if(a.at(i) == a.at(j) ){
          i++; 
          j--;
@@ -17,12 +17,10 @@ int palindrome(string a){
        }
       }
       else{
-        j--;
-        i--;
+       j--;
        }
     }else{
       i++;
-      j++;
     }
   }
     return 1;
@@ -43,9 +41,10 @@ for(int i = 0; i < a.size() - 1; i++){
 int main(){
   string a;
   getline(cin , a);
-  cout << a << endl;
+  
+  if(a.at(0) != '*'){
   a = reformed(a);
-   cout << a << endl;
 
-    palindrome(a) ?  cout << "Y" : cout << "N";
+    palindrome(a) ?  cout << "Y" : cout << "N";}
+    return 0;
 }
