@@ -16,25 +16,41 @@ int main(){
         v.push_back(p);
     }
 
-    for(int i = 0; i < u.size() ; i++){
-        cout << " u: " << u.at(i) << " v: " << v.at(i) << endl;
-        if(u.at(i) == 1){
-            res.push_back(v.at(i));
-        }
-    }
-    
-    p =0;
-    while(!p){
-          p = 1;
-    for(int i = 0 , j = 0; i < u.size() && j < res.size(); i++){
+    int j = 1;
+    while(j <= n){
+    for(int i = 0 , l = 0; i < u.size() ; i++){
         auto pos = find(res.begin(), res.end(), v.at(i)) ;
-        if(u.at(i) == res.at(j) && !(res.empty())){
-            p = 0;
+        auto exist = find(res.begin(), res.end(), j) ;
+        if(j == 1){
+        if(u.at(i) == 1 && !(pos != res.end())){
             res.push_back(v.at(i));
-            j++;
+            // cout << " CICLO " << j << " " << res.at(l) << endl;
+            // l++;
+        }
+    }else{
+        if(u.at(i) == j && !(pos != res.end()) && (exist != res.end()) && v.at(i) != 1){
+            res.push_back(v.at(i));
+            //  cout << " CICLO " << j << " " << res.at(l) << endl;
+            // l++;
         }
     }
+    }
+    j++;
 }
-
-    cout << res.size() << endl;
-}
+    
+//   for(int i = 0; i < res.size(); i++){
+//      cout << " RES " << res.at(i) << endl;
+//    }
+    // p =0;
+    // while(!p){
+    //       p = 1;
+    // for(int i = 0 , j = 0; i < u.size() && j < res.size(); i++){
+    //     auto pos = find(res.begin(), res.end(), v.at(i)) ;
+    //     if(u.at(i) == res.at(j) && !(res.empty()) && !(pos != res.end())){
+    //         p = 0;
+    //         res.push_back(v.at(i));
+    //         j++;
+    //     }
+      // }
+    cout << res.size() + 1 << endl;
+} 
