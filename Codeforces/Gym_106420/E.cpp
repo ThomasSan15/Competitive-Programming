@@ -23,8 +23,8 @@ int main()
         {
             int duracion = vectorDuraciones[i];
             int dps = vectorDPS[i];
-            int dañoTotal = duracion * (dps - level);
-            if (dañoTotal < 0)
+            long long dañoTotal = 1LL * duracion * (dps - level);
+            if (level >= dps )
             {
                 dañoTotal = 0;
             }
