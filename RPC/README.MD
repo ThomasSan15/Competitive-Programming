@@ -12,3 +12,12 @@ ProblemsetRPC02/
 .
 .
 
+
+Inside each folder, files are named after the **problem they solve**:
+Bases.cpp , Benefits.cpp, etc..
+
+## Notes
+
+- Problems are solved as part of competitive programming practice.
+- File names correspond to the **problem names** instead of letters..
+- Solutions are mainly written in **C++**.
