@@ -17,6 +17,10 @@ int main(){
         cin >> value;
         s.push_back(value);
     }
-    
+
+    for(int i = 0; i < n; i++){
+        a.at(i) / s.at(i);
+    }
+
 
 }
