@@ -4,7 +4,7 @@ This folder contains my solutions to problems from **Codeforces**.
 
 ## Structure
 
-The `Codeforces` directory is organized into **subfolders**, where each subfolder corresponds to a specific **Gym contest** from which the problems were selected.
+The `Codeforces` directory is organized into **subfolders**, where each subfolder corresponds to a specific **Gym contest** or **Contest** from which the problems were selected.
 
 Each Gym folder contains the solutions to the problems solved from that contest.
 
@@ -13,19 +13,20 @@ Example structure:
 
     Codeforces/
     │
-    ├── Gym_Contest_1/
+    ├── Contest_XXXX/
     │ ├── A.cpp
     │ ├── B.cpp
     │ └── C.cpp
     │
-    ├── Gym_Contest_2/
+    ├── Gym_XXXX/
     │ ├── A.cpp
     │ └── D.cpp
     │
-    └── Gym_Contest_3/
-    ├── A.cpp
-    ├── B.cpp
-    └── E.cpp
+    ├── Gym_XXXX/
+    │ ├── A.cpp
+    │ ├── B.cpp
+    │ └── E.cpp
+
 
 
 ## Notes
