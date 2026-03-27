@@ -1,9 +1,10 @@
 //http://codeforces.com/problemset/problem/2197/A
 
-#include <iostream>
-#include <math.h>
+#include <bits/stdc++.h>
 
 using namespace std;
+#define fastio ios::sync_with_stdio(false); cin.tie(nullptr);
+
 
 int Sum_Digits(int x){
     int sum = 0;
@@ -25,12 +26,13 @@ int Digits(int x){
 }
 
 int main(){
-    int t, x ,y, count ,aux;
+    fastio;
+    int t, x ,y, count = 0;
     cin >> t;
     while(t--){
         cin >> x;
-        aux = Digits(x);
-        for(y = 0; y < aux; y++){
+        
+        for(y = x; y <= x + 200; y++){
             if(y - Sum_Digits(y) == x){
                 count++;
             }
