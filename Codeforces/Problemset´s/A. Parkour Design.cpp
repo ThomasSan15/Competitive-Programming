@@ -33,15 +33,17 @@ int main() {
     
     while (t--) {
         cin >> x >> y;
-        if(y > x  || y == x){cout << "NO" << endl;}else{
-        if((y + x) % 3 == 0 && (y + x) > 0){
+        if((float)-(x/4) <= y ||  y <= (float)(x/2)){
+        if((y + x) % 3 == 0){
             cout << "YES" << endl;
         }else{
             cout << "NO" << endl;
+        }}else{
+             cout << "NO" << endl;
         }
 
     }
-}
-
     return 0;
 }
+
+    
