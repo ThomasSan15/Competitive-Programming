@@ -10,27 +10,29 @@ int main(){
     cin >> t;
     while(t){
         cin >> n;
-        vector<int> a(n);
-        for(int i = 1; i <= n; i++){
-            cin >> a[i];
-        }
-    
-        for(int i = 1; i <= n/2; i++){
-            if(a.at(i) > a.at(2*i)){
-                swap(a.at(i), a.at(2*i));
-            }
-        }
-        for(int i = 1; i < n - 1; i++){
-            if(a.at(i) > a.at(i + 1)){
-                cout << "NO" << endl;
-                b = 1;
-                break;
-            }
-        }
-        if(b != 1){
-            cout << "YES" << endl;
-        }
-        b = 0;
+        vector<int> a(n + 1);
+      for(int i = 1; i <= n; i++){
+    cin >> a[i];
+}
+
+for(int i = 1; i <= n/2; i++){
+    if(a[i] > a[2*i]){
+        swap(a[i], a[2*i]);
+    }
+}
+
+for(int i = 1; i < n; i++){
+    if(a[i] > a[i + 1]){
+        cout << "NO" << endl;
+        b = 1;
+        break;
+    }
+}
+
+if(b != 1){
+    cout << "YES" << endl;
+}
+b = 0;
         a.clear();
         a.shrink_to_fit();
         t--;
