@@ -14,9 +14,7 @@ int main(){
         for(int i = 1; i <= n; i++){
             cin >> a[i];
         }
-        for(int i = 1; i <= n; i++){
-            cout << a[i] << " ";
-        }
+    
         for(int i = 1; i <= n/2; i++){
             if(a.at(i) > a.at(2*i)){
                 swap(a.at(i), a.at(2*i));
@@ -30,7 +28,7 @@ int main(){
             }
         }
         if(b != 1){
-            cout << "YES";
+            cout << "YES" << endl;
         }
         b = 0;
         a.clear();
