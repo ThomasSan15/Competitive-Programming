@@ -15,10 +15,16 @@ int main(){
     cin >> a[i];
 }
 
+bool change = true;
+while(change){
+    change = false;
 for(int i = 1; i <= n/2; i++){
     if(a[i] > a[2*i]){
         swap(a[i], a[2*i]);
+        change = true;
     }
+}
+
 }
 
 for(int i = 1; i < n; i++){
