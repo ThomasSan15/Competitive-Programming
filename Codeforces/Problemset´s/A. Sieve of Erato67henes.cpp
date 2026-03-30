@@ -17,17 +17,35 @@ int main(){
             cin >> a[i];
         }
         
-        for (int i = 0, j = 1 ; i < n - 1; j++){
-            if((a.at(i) * a.at(j)) % 67 == 0){
+        for (int i = 0, j = 0 ; i < n ; ){
+            //cout << "iteracion i : " << i << " it j " << j << endl; 
+            if(n == 1 && a.at(i) == 67){
                 cout << "YES" << endl;
                 b = 0;
                 break;
             }
+            else{
+            if((a.at(i) * a.at(j)) % 67 == 0){
+                cout << "YES" << endl;
+                b = 0;
+                break;
+            }else{
             if(j + 1 >= n){
                 i++;
+                if(i < n - 1){
                 j = i + 1;
+                }
+                else{
+                    break;
+                }
+            }else{
+                    j++;
             }
         }
+
+        }
+    }
+
         if(b == 1){
             cout << "NO" << endl;
         }
