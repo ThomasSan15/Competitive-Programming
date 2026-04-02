@@ -12,8 +12,8 @@ using ll = long long;
 
 int sumarray(vector<int> a){
     int x = 0;
-    for(int i = 0; i < a.size() - 1; i++){
-        x += a[i];
+    for(int i = 0; i < a.size() ; i++){
+        x = a[i] + x;
     }
     return x;
 }
@@ -35,13 +35,31 @@ void solve(){
     for(int i = 0; i < n; i++){
         cin >> a[i];
     }
-
-    if(x % 2 == 0 && anyOdd(a) == -1 && s % 2 != 0){
+   
+    if(sumarray(a) % 2 == 0 && x % 2 == 0 && s % 2 != 0){
         cout << "NO" << endl;
-    }else{
-        cout << "yes" << endl;
-    }
+        return void();
+    }else if(sumarray(a) > s) {cout << "NO" << endl; 
+    return void();}
+    else{
+        if(sumarray(a) == s){
+            cout << "YES" << endl;
+            return void();
+        }else{
+        while(sumarray(a) <= s){
 
+            if( sumarray(a) == s){
+                 cout << "YES" << endl;
+                return void();
+        }else{
+            a[0] += x;
+        }
+    }
+    }
+    cout << "NO" << endl;
+    return void();
+
+    }
 
 }
 
