@@ -11,6 +11,8 @@
 #include <array>
 #include <cassert>
 
+using namespace std;
+
 #define fastio ios::sync_with_stdio(false); cin.tie(nullptr);
 #define pb push_back
 #define fst first
@@ -34,7 +36,7 @@ const int MOD = 1e9 + 7;
 #define debug(x)
 #endif
 
-using namespace std;
+
 
 void solve() {
     
@@ -45,9 +47,26 @@ int main() {
 
     int t = 1;
     cin >> t;
+
     while (t--) {
-        solve();
-    }
+        ll n; cin >> n;
+        string s; cin >> s;
+        vv pos[2];
+
+            fore(i,0,n)pos[s[i] - '0'].pb(i);
+            if(SZ(pos[0] ) & 1){
+                cout << SZ(pos[0]) << endl;
+                for(auto i: pos[0]) cout << i + 1 << " " ;;
+                 cout << endl;
+            }
+            else if(SZ(pos[1]) % 2 == 0){
+                cout << SZ(pos[1]) << endl;
+                 for(auto i: pos[1]) cout << i + 1 << " ";;
+                  cout << endl;
+            }
+            else cout << "-1" << endl;
+        }
+
 
     return 0;
 }
