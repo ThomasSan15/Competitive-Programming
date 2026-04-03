@@ -40,15 +40,23 @@ typedef vector<ll> vv;
 void solve() {
     int n; cin >> n;
 
-    if(n == 2 || n == 3){
+    if(n == 2 ){
          cout << "2" << endl; 
          return void();}
-    if(n - 2 % 3 == 0 || n - 3 % 2 == 0){
-        cout << "1" << endl;
-        return void();}
-    
-    if(n % 2 == 0 || n % 3 == 0){
+       if(n == 3 ){
+         cout << "3" << endl; 
+         return void();}  
+    if(n >= 4 && n % 2 == 0){
         cout << "0" << endl;
+        return void();
+    }
+    if(n >= 5 && n % 2 != 0){
+        cout << "1" << endl;
+        return void();
+    }
+  
+    else{
+        cout << "2" << endl;
         return void();
     }
 
