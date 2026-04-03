@@ -11,6 +11,8 @@
 #include <array>
 #include <cassert>
 
+using namespace std;
+
 #define fastio ios::sync_with_stdio(false); cin.tie(nullptr);
 #define pb push_back
 #define fst first
@@ -25,8 +27,8 @@ typedef long long ll;
 typedef pair<ll,ll> ii;
 typedef vector<ll> vv;
 
-const ll INF = 1e18;
-const int MOD = 1e9 + 7;
+// const ll INF = 1e18;
+// const int MOD = 1e9 + 7;
 
 #ifdef LOCAL
 #define debug(x) cerr << #x << " = " << x << endl;
@@ -34,11 +36,39 @@ const int MOD = 1e9 + 7;
 #define debug(x)
 #endif
 
-using namespace std;
 
-void solve() {
-    
+
+void solve(){
+    int n; cin >> n;
+    int count = 0;
+ 
+    string s; cin >> s;
+    for(int i = 0; i < n ; i++){
+        char c = s.at(i);  
+        if(n > 1){ 
+            if(i + 1 < n){
+                if(i >= 1 ){
+          
+              if(s.at(i-1) !=  c){
+                count ++;
+            }
+
+        }else{
+            count++;
+        }
+
+        }else if(c != s.at(i - 1)) count++;
+    }else{
+            count++;
+     }
+  
+    }
+
+    if(s.at(0) != s.at(n-1) && count < n) count++;
+
+    cout << count << endl;
 }
+
 
 int main() {
     fastio
