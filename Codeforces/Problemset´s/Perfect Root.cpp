@@ -1,3 +1,5 @@
+//https://codeforces.com/problemset/problem/2185/A
+
 #include <bits/stdc++.h>
 #include <algorithm>
 #include <complex>
@@ -21,14 +23,12 @@ using namespace std;
 #define imp(v) {for(auto i : v) cout << i << " "; cout << "\n";}
 #define inp(v) {for(auto &i : v) cin >> i;}
 
-
 typedef long long ll;
 typedef pair<ll,ll> ii;
 typedef vector<ll> vv;
 
 const ll INF = 1e18;
 const int MOD = 1e9 + 7;
-
 
 #ifdef LOCAL
 #define debug(x) cerr << #x << " = " << x << endl;
@@ -37,18 +37,17 @@ const int MOD = 1e9 + 7;
 #endif
 
 
-
-void solve(){
+void solve() {
     
 }
 
 int main() {
     fastio
-    
+
     int t = 1;
-    cin >> t;   
+    cin >> t;
     while (t--) {
-       solve();
+        solve();
     }
 
     return 0;
