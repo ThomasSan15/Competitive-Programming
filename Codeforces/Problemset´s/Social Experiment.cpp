@@ -1,4 +1,4 @@
-//https://codeforces.com/problemset/problem/2185/A
+//https://codeforces.com/problemset/problem/2184/A
 
 #include <bits/stdc++.h>
 #include <algorithm>
@@ -39,11 +39,18 @@ typedef vector<ll> vv;
 
 void solve() {
     int n; cin >> n;
-    for(int i = 0; i < n; ){
-        cout << i + 1 << " " ;
-        i++;
+
+    if(n == 2 || n == 3){
+         cout << "2" << endl; 
+         return void();}
+    if(n - 2 % 3 == 0 || n - 3 % 2 == 0){
+        cout << "1" << endl;
+        return void();}
+    
+    if(n % 2 == 0 || n % 3 == 0){
+        cout << "0" << endl;
+        return void();
     }
-    cout << endl;
 
 }
 
