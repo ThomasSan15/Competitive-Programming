@@ -1,4 +1,4 @@
-//https://codeforces.com/problemset/problem/2188/B
+//https://codeforces.com/problemset/problem/2185/B
 
 #include <bits/stdc++.h>
 #include <algorithm>
@@ -36,47 +36,19 @@ typedef vector<ll> vv;
 #define debug(x)
 #endif
 
+int maxV(vector<int> a){
+    int aux = -1;
+    for(int x: a){
+        if(aux < x) aux = x;
+    }
+    return aux;
+}
 
 void solve() {
-    int n ; cin >> n;
-    string s; cin >> s;
-    int count = 0;
-    int aux = 0;
-    int pos = -1;
-
-    if(n == 1 || n == 2){
-        cout << "1" << endl;
-        return void();
-    }
-
-    for(int i = 0; i < n; i++){
-
-        if(s.at(i) == '0' && aux == 0){
-            aux++;
-            pos = i;
-        }else{
-        if(s.at(i) == '0' && aux == 2){
-            aux++;
-            if(pos != 0){
-                pos = i;
-            }
-        }else{
-            if(s.at(i) == '0') aux++;
-        }
-    }
-
-        if(aux == 3 && (pos == 0 || pos == n - 1) && n > 3){
-             count += 2;
-            aux = 0;}
-        
-        if(aux == 3){
-             count++;
-            aux = 0;}
-    } 
-
-    fore(i,0,n) if(s.at(i) == '1') count++;
-
-    cout << count <<endl;
+    int n; cin >> n;
+    vector<int> a(n);
+    fore(i,0,n) cin >> a[i];
+    cout << maxV(a) * n << endl;   
 }
 
 int main() {
@@ -84,9 +56,8 @@ int main() {
 
     int t = 1;
     cin >> t;
-
-     while (t--) {
-         solve();
+    while (t--) {
+        solve();
     }
 
     return 0;
