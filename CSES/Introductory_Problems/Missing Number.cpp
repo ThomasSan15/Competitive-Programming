@@ -49,14 +49,12 @@ int main() {
     vv a(n-1);
     inp(a);
     ll num = -1;
-
-    for(ll i = 0, x = 1; i < n -1; i++, x++){
-        auto it = find(a.begin(), a.end(), x);
-
-    if (it == a.end()) {
-        num = x;
-    }
-
+    sort(a.begin(),a.end());
+    for(ll i = 0, x = 1; i < n - 1; i++, x++){
+        if(a.at(i) != x){
+            num = x;
+            break;
+        }
     } 
     if(num == -1) num = n;
     cout << num << endl;
