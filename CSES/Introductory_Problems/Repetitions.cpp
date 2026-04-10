@@ -27,8 +27,8 @@ typedef long long ll;
 typedef pair<ll,ll> ii;
 typedef vector<ll> vv;
 
-const ll INF = 1e18;
-const int MOD = 1e9 + 7;
+// const ll INF = 1e18;
+// const int MOD = 1e9 + 7;
 
 #ifdef LOCAL
 #define debug(x) cerr << #x << " = " << x << endl;
@@ -37,6 +37,75 @@ const int MOD = 1e9 + 7;
 #endif
 
 
+
+int countA(string a){
+    int count = 0;
+    int b = 0;
+    for(int i = 0; i < a.size()  ; i++){
+         if(i < a.size() - 1 && a[i] == 'A' && b == 0 && a[i + 1] == 'A') {
+            count++;
+            b = 1;
+            }
+         else if(a[i] == 'A' && b != 0) count++;
+         else if(a[i] != 'A') b = 0;
+    }
+    if(count == 0 && a.size() > 0){
+        return 1;
+    }
+return count;
+}
+
+int countC(string a){
+    int count = 0;
+    int b = 0;
+    for(int i = 0; i < a.size()  ; i++){
+         if(i < a.size() - 1 && a[i] == 'C' && b == 0 && a[i + 1] == 'C') {
+            count++;
+            b = 1;
+            }
+         else if(a[i] == 'C' && b != 0) count++;
+         else if(a[i] != 'C') b = 0;
+    }
+     if(count == 0 && a.size() > 0){
+        return 1;
+    }
+return count;
+}
+
+int countG(string a){
+    int count = 0;
+    int b = 0;
+    for(int i = 0; i < a.size()  ; i++){
+         if(i < a.size() - 1 && a[i] == 'G' && b == 0 && a[i + 1] == 'G') {
+            count++;
+            b = 1;
+            }
+         else if(a[i] == 'G' && b != 0) count++;
+         else if(a[i] != 'G') b = 0;
+    }
+     if(count == 0 && a.size() > 0){
+        return 1;
+    }
+return count;
+}
+
+int countT(string a){
+    int count = 0;
+    int b = 0;
+    for(int i = 0; i < a.size()  ; i++){
+         if(i < a.size() - 1 && a[i] == 'T' && b == 0 && a[i + 1] == 'T') {
+            count++;
+            b = 1;
+            }
+         else if(a[i] == 'T' && b != 0) count++;
+         else if(a[i] != 'T') b = 0;
+    }
+     if(count == 0 && a.size() > 0){
+        return 1;
+    }
+return count;
+}
+
 void solve() {
     
 }
@@ -44,11 +113,14 @@ void solve() {
 int main() {
     fastio
 
-    int t = 1;
-    cin >> t;
-    while (t--) {
-        solve();
-    }
+    // int t = 1;
+    // cin >> t;
+    // while (t--) {
+    //     solve();
+    // }
+    string a;
+    cin >> a;
+    cout << max(max(countA(a),countT(a)),max(countG(a),countC(a))) << endl;
 
     return 0;
 }
