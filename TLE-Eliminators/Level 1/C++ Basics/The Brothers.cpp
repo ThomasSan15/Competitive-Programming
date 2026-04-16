@@ -36,12 +36,7 @@ typedef vector<ll> vv;
 #define debug(x)
 #endif
 
-int sub(string a){
-    for(int i = 0; i < a.size(); i++){
-        if(a[i] == ' ') return i;
-    }
-    return -1;
-}
+
 
 void solve() {
     string a1, a2, b1, b2;
@@ -60,7 +55,7 @@ int main() {
     fastio
 
     int t = 1;
-    cin >> t;
+
     while (t--) {
         solve();
     }
