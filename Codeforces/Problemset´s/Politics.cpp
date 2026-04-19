@@ -27,8 +27,8 @@ typedef long long ll;
 typedef pair<ll,ll> ii;
 typedef vector<ll> vv;
 
-const ll INF = 1e18;
-const int MOD = 1e9 + 7;
+//const ll INF = 1e18;
+//const int MOD = 1e9 + 7;
 
 #ifdef LOCAL
 #define debug(x) cerr << #x << " = " << x << endl;
@@ -38,12 +38,7 @@ const int MOD = 1e9 + 7;
 
 
 void solve() {
-    int n, k; cin >> n >> k;
-
-    if(n == 1){
-        cout << n << endl;
-    }else {
-    }
+    
 }
 
 int main() {
