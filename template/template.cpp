@@ -1,3 +1,5 @@
+//
+
 #include <bits/stdc++.h>
 #include <algorithm>
 #include <complex>
@@ -26,8 +28,8 @@ typedef long long ll;
 typedef pair<ll,ll> ii;
 typedef vector<ll> vv;
 
-const ll INF = 1e18;
-const int MOD = 1e9 + 7;
+// const ll INF = 1e18;
+// const int MOD = 1e9 + 7;
 
 
 #ifdef LOCAL
