@@ -40,6 +40,7 @@ typedef vector<ll> vv;
 
 int countA(string a){
     int count = 0;
+    int countaux = 0;
     int b = 0;
     for(int i = 0; i < a.size()  ; i++){
          if(i < a.size() - 1 && a[i] == 'A' && b == 0 && a[i + 1] == 'A') {
@@ -47,7 +48,7 @@ int countA(string a){
             b = 1;
             }
          else if(a[i] == 'A' && b != 0) count++;
-         else if(a[i] != 'A') b = 0;
+         else if(a[i] != 'A') b = 0; countaux = max(countaux, count);
     }
     if(count == 0 && a.size() > 0){
         return 1;
@@ -58,13 +59,14 @@ return count;
 int countC(string a){
     int count = 0;
     int b = 0;
+    int countaux = 0;
     for(int i = 0; i < a.size()  ; i++){
          if(i < a.size() - 1 && a[i] == 'C' && b == 0 && a[i + 1] == 'C') {
             count++;
             b = 1;
             }
          else if(a[i] == 'C' && b != 0) count++;
-         else if(a[i] != 'C') b = 0;
+         else if(a[i] != 'C') b = 0;countaux = max(countaux, count);
     }
      if(count == 0 && a.size() > 0){
         return 1;
@@ -75,13 +77,14 @@ return count;
 int countG(string a){
     int count = 0;
     int b = 0;
+    int countaux = 0;
     for(int i = 0; i < a.size()  ; i++){
          if(i < a.size() - 1 && a[i] == 'G' && b == 0 && a[i + 1] == 'G') {
             count++;
             b = 1;
             }
          else if(a[i] == 'G' && b != 0) count++;
-         else if(a[i] != 'G') b = 0;
+         else if(a[i] != 'G') b = 0;countaux = max(countaux, count);
     }
      if(count == 0 && a.size() > 0){
         return 1;
@@ -92,13 +95,14 @@ return count;
 int countT(string a){
     int count = 0;
     int b = 0;
+    int countaux = 0;
     for(int i = 0; i < a.size()  ; i++){
          if(i < a.size() - 1 && a[i] == 'T' && b == 0 && a[i + 1] == 'T') {
             count++;
             b = 1;
             }
          else if(a[i] == 'T' && b != 0) count++;
-         else if(a[i] != 'T') b = 0;
+         else if(a[i] != 'T') b = 0;countaux = max(countaux, count);
     }
      if(count == 0 && a.size() > 0){
         return 1;
