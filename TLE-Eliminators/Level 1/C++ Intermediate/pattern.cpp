@@ -39,10 +39,25 @@ typedef vector<ll> vv;
 
 void solve() {
     int n; cin >> n;
-    
+    int sp = n - 2;
+
     for(int i = 0; i < n; i++){
-        for(int j = 0; j <)
+        for(int j = 0; j < n ; j++)
+        {
+            if(i == 0 || i == n - 1){
+                cout << '*' ;
+            }else{
+              if(j == sp ){
+                cout << '*';
+                sp--;
+              }else{
+                cout << ' ';
+              }
     }
+}
+    cout << endl;
+}
+
 }
 
 int main() {
