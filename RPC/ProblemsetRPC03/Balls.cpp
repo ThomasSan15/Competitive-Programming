@@ -54,17 +54,14 @@ int main() {
 
    float p, q; cin >> p >> q;
    
-
+int g = 0;
   
-   
       for(ll r = 1; r <= 1000000; r++){
-        for( ll g = r ; g <= q + 1000000 ; g++){
+       g = 
         if(p/q == pos(r,g)){
             cout << r << " " << g << endl;
             return 0;
         }
-
-    }
 }
    
     cout << "impossible" << endl;

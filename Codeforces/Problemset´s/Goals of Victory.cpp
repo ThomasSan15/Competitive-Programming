@@ -1,3 +1,5 @@
+//
+
 #include <bits/stdc++.h>
 #include <algorithm>
 #include <complex>
@@ -25,8 +27,8 @@ typedef long long ll;
 typedef pair<ll,ll> ii;
 typedef vector<ll> vv;
 
-// const ll INF = 1e18;
-// const int MOD = 1e9 + 7;
+//const ll INF = 1e18;
+//const int MOD = 1e9 + 7;
 
 #ifdef LOCAL
 #define debug(x) cerr << #x << " = " << x << endl;
@@ -34,47 +36,25 @@ typedef vector<ll> vv;
 #define debug(x)
 #endif
 
-int techo(int a, int b){
-    return (a + b - 1) / b;
-}
+
 void solve() {
-    ll n = 0;
-    cin >> n;
-    ll ng = 1;
-    ll cp = 0;
-
-    for ( ll i = 1 ; i < n ; ){
-        if ( i + ng > n ) {
-        
-            cp++;  
-            i++;
-        }else  {
-        i+=ng;
-        ng++;
-        cp=0;
-    }
-}
+    int n; cin >> n;
+    vv a(n-1);
+    inp(a);
+    int r = 0;
+    fore(i,0,n-1) r += a[i];
+    cout << -1*r << endl;
     
-    if ( cp == 0 ) {
-
-    cout << ng << endl;
-    }else{
-    ll div = __gcd(cp , ng);
-    if ( cp % div == 0) {
-       cout << ng << " " << cp/div << "/" << ng/div << endl; 
-    } else {
-    cout << ng << " " << cp << "/" << ng << endl;
-    }
-
-}
-
 }
 
 int main() {
     fastio
+
     int t = 1;
-    while(t--){
+    cin >> t;
+    while (t--) {
         solve();
     }
- 
+
+    return 0;
 }
