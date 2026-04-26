@@ -38,7 +38,16 @@ typedef vector<ll> vv;
 
 
 void solve() {
-    
+         int n, k; cin >> n >> k;
+         int count = 1;
+         
+    vector<string> a(n);
+    inp(a);
+
+    for(int i = 0; i <n - 1; i++){
+   if(a[0] == a[i + 1]) count++;
+}
+cout << count <<endl;
 }
 
 int main() {
