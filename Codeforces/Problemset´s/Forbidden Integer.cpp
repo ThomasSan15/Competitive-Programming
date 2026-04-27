@@ -1,4 +1,4 @@
-//https://codeforces.com/problemset/problem/2170/A
+//https://codeforces.com/problemset/problem/1845/A
 
 #include <bits/stdc++.h>
 #include <algorithm>
@@ -38,13 +38,16 @@ typedef vector<ll> vv;
 
 
 void solve() {
-    int n; cin >> n;
-    if(n == 1) cout << "1" << endl;
-    else if(n == 2)cout << "9" << endl;
+    int n, k , x; cin >> n >> k >> x;
+    if(n <= k){
+    if((k >= 2  && x != 1) || (k >= 2  && x == 1 && n % 2 == 0 ) ){
+        cout << "YES" << endl;
+        
+    }else{
+        cout << "NO" << endl;
+    }}
     else{
-    cout << max(((n*n) + (n*n - 1) + (n*n - 2) + (n*n - n - 1)), 
-    ((n*n - 1) + (n*n - n) + (n*n - n - 1) + (n*n - n - 2) + (n*n - 2*n -1)))
-    << endl;
+        cout << "NO" << endl;
     }
 }
 
