@@ -1,15 +1,16 @@
-//https://cses.fi/problemset/task/1069
+//https://cses.fi/problemset/task/1094
 
 #include <bits/stdc++.h>
-#include <algorithm>
-#include <complex>
-#include <map>
-#include <set>
-#include <string>
-#include <vector>
-#include <numeric>
-#include <array>
-#include <cassert>
+//#include <iostream>
+//#include <algorithm>
+//#include <complex>
+//#include <map>
+//#include <set>
+//#include <string>
+//#include <vector>
+//#include <numeric>
+//#include <array>
+//#include <cassert>
 
 using namespace std;
 
@@ -27,8 +28,8 @@ typedef long long ll;
 typedef pair<ll,ll> ii;
 typedef vector<ll> vv;
 
-// const ll INF = 1e18;
-// const int MOD = 1e9 + 7;
+//const ll INF = 1e18;
+//const int MOD = 1e9 + 7;
 
 #ifdef LOCAL
 #define debug(x) cerr << #x << " = " << x << endl;
@@ -37,28 +38,33 @@ typedef vector<ll> vv;
 #endif
 
 
-
-
-
-  
 void solve() {
-    string s;
-    vv a;
-    vv c;
-    vv g;
-    vv t;
-  
+    int n; cin >> n;
+
+    vv a(n);
+    inp(a);
+    int b = 1;
+    int count = 0;
+    while(is_sorted(a)){
+    fore(i,0,n - 1){
+      if(a[i] < a[i + 1]){
+    
+        swap(a[i], a[i+1]);
+        count++;
+      }
+    }
+}
+cout << count - 1<< endl;
 }
 
 int main() {
     fastio
 
-     int t = 1;
-    // cin >> t;
-     while (t--) {
-         solve();
-     }
+    int t = 1;
     
+    while (t--) {
+        solve();
+    }
 
     return 0;
 }
