@@ -40,7 +40,23 @@ typedef vector<ll> vv;
 
 void solve() {
         int n, h,m; cin >> n >> h >> m;
-
+        int rest = 0;
+        int time = 0;
+        int hi = 0;
+        int mi = 0;
+        int result = INT_MAX;
+        time = h* 60 + m;
+        while(n--){
+            cin >>hi >> mi;
+            rest =  ((hi * 60) + mi) - time;
+            if(rest <= 0){
+                rest = abs(rest);
+            }
+            result = min(result,rest);
+        }
+        h = result / 60;
+        m = result % 60;
+        cout << h << " " << m << endl;
         
 }
 
