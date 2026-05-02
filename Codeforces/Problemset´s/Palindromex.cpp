@@ -1,13 +1,16 @@
+//https://codeforces.com/contest/2227/problem/D
+
 #include <bits/stdc++.h>
-#include <algorithm>
-#include <complex>
-#include <map>
-#include <set>
-#include <string>
-#include <vector>
-#include <numeric>
-#include <array>
-#include <cassert>
+//#include <iostream>
+//#include <algorithm>
+//#include <complex>
+//#include <map>
+//#include <set>
+//#include <string>
+//#include <vector>
+//#include <numeric>
+//#include <array>
+//#include <cassert>
 
 using namespace std;
 
@@ -25,8 +28,8 @@ typedef long long ll;
 typedef pair<ll,ll> ii;
 typedef vector<ll> vv;
 
-// const ll INF = 1e18;
-// const int MOD = 1e9 + 7;
+//const ll INF = 1e18;
+//const int MOD = 1e9 + 7;
 
 #ifdef LOCAL
 #define debug(x) cerr << #x << " = " << x << endl;
@@ -36,28 +39,27 @@ typedef vector<ll> vv;
 
 
 
-float pos(float r, float g){
-    float value = (2 * r * g) / ((r+g) * (r + g -1));
-    return value;
+void solve() {
+    int n; cin >> n;
+    vv a(2*n);
+    inp(a);
+    int l = 0; 
+    int r = 2*n - 1;
+    int tmpr = r;
+    int templ = l;
+    for(; r > l; r--){
+        if(a[l] != a[r]) break;
+    }
 }
-
 
 int main() {
     fastio
 
-   float p, q; cin >> p >> q;
-   
-int g = 0;
-  
-      for(ll r = 1; r <= 1000000; r++){
+    int t = 1;
+    cin >> t;
+    while (t--) {
+        solve();
+    }
 
-         if(p/q == pos(r,g)){
-            cout << r << " " << g << endl;
-            return 0;
-        }
-}
-   
-    cout << "impossible" << endl;
-   
     return 0;
 }
