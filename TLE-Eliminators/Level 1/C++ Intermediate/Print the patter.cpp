@@ -39,10 +39,15 @@ typedef vector<ll> vv;
 
 void solve() {
     int n; cin >> n;
+    
     for(int i = 1, num = 1; i <= n ; i++ ){
-        for(int j = 0; j < i; j++, num++){
-            if()
+        for(int j = 0, naux = num + i - 1; j < i; j++, num++, naux--){
+        
+            if(i % 2 != 0 && i > 1){
+                cout << naux << " ";
+            }else{
             cout << num << " ";
+            }
         }
         cout << endl;
     } 
@@ -52,7 +57,7 @@ int main() {
     fastio
 
     int t = 1;
-    cin >> t;
+
     while (t--) {
         solve();
     }

@@ -1,17 +1,6 @@
 //https://codeforces.com/contest/2227/problem/D
 
 #include <bits/stdc++.h>
-//#include <iostream>
-//#include <algorithm>
-//#include <complex>
-//#include <map>
-//#include <set>
-//#include <string>
-//#include <vector>
-//#include <numeric>
-//#include <array>
-//#include <cassert>
-
 using namespace std;
 
 #define fastio ios::sync_with_stdio(false); cin.tie(nullptr);
@@ -38,18 +27,78 @@ typedef vector<ll> vv;
 #endif
 
 
-
 void solve() {
-    int n; cin >> n;
+    int n;
+    cin >> n;
     vv a(2*n);
     inp(a);
-    int l = 0; 
-    int r = 2*n - 1;
-    int tmpr = r;
-    int templ = l;
-    for(; r > l; r--){
-        if(a[l] != a[r]) break;
+    int temp1 = 0;
+    int temp2 = 0;
+    int r = 0;
+    int l= 0;
+
+    int pos_firstZero = 0;
+    for(int i = 0; i < 2*n; i++) {
+        if(a[i] == 0) {
+            pos_firstZero = i;
+            break;
+        }
     }
+    int pos_secondZero = 0;
+    for(int i = 2*n - 1; i >= 0; i--) {
+        if(a[i] == 0) {
+            pos_secondZero = i;
+            break;
+        }
+    }
+
+    
+    int temp1 = pos_firstZero;
+    int temp2 = pos_secondZero;
+    bool flag = false;
+    bool palindromexinto = false;
+
+    while(!flag) {
+        if(a[pos_firstZero] == a[pos_secondZero]) {
+            if(pos_firstZero < pos_secondZero){
+            pos_firstZero++;
+            pos_secondZero--;
+            }else{
+                palindromexinto = true;
+                flag = true;
+            }
+        } else {
+              palindromexinto = false;
+              flag = true;
+        }
+    }
+
+    flag = false;
+
+    if(palindromexinto){
+        pos_firstZero = temp1;
+        pos_secondZero = temp2;
+        while(!flag){
+            if(a[pos_firstZero] == a[pos_secondZero]) {
+            if(pos_firstZero > 0 && pos_secondZero < 2*n - 1){
+            pos_firstZero--;
+            pos_secondZero++;
+            }else{
+                r = pos_secondZero;
+                l = pos_firstZero;
+            }
+        } else {
+              r = pos_secondZero;
+            l = pos_firstZero;
+            flag = true;
+        }
+        }
+    }else{
+
+    }
+
+    cout << pos_firstZero << " " << pos_secondZero << endl;
+    
 }
 
 int main() {
