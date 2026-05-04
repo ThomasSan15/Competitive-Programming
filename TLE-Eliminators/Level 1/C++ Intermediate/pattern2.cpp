@@ -41,23 +41,23 @@ typedef vector<ll> vv;
 void solve() {
     int n; cin >> n;
    
-    for(int i = 0; i < n; i++ ){
-        for(int j = 0; j < i; j++){
-           for(int spaces = n - i ; spaces > 0; spaces--){
+    for(int i = 1; i < n; i++ ){
+        for(int spaces = n - i ; spaces > 0; spaces--){
             cout << " ";
            }
-                cout << '*';
+        for(int j = 0; j < i; j++){
             
+                cout << "*" << " ";
         }
         cout << endl;
     }
    
      for(int i = n; i > 0; i-- ){
-        for(int j = 0; j < i; j++){
-           for(int spaces = n - i; spaces > 0; spaces--){
+         for(int spaces = n - i ; spaces > 0; spaces--){
             cout << " ";
            }
-                cout << '*';
+        for(int j = 0; j < i; j++){
+                cout << '*' << " ";
             
         }
         cout << endl;
