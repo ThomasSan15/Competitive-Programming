@@ -39,15 +39,41 @@ typedef vector<ll> vv;
 
 void solve() {
     int n, k , x; cin >> n >> k >> x;
-    if(n <= k){
-    if((k >= 2  && x != 1) || (k >= 2  && x == 1 && n % 2 == 0 ) ){
+    if(n >= k){
+    if((k >= 2  && x != 1 )  || (k >= 3 && n % 2 != 0) || (k >= 2 && n % 2 == 0)){
         cout << "YES" << endl;
+        vv m;
+        if(x != 1){
+            for(int i = 1; n != 0; ){
+                n -= i;
+                m.push_back(i);
+            }
+        }else{
+            if(n % 2 == 0){
+                for(int i = 2; n != 0; ){
+                n -= i;
+                m.push_back(i);
+            }
+            
+        }else{
+            n -= 3;
+            m.push_back(3);
+             for(int i = 2; n != 0; ){
+                n -= i;
+                m.push_back(i);
+            }
+        }
         
+        }
+        cout << m.size() << endl;
+        imp(m);
     }else{
         cout << "NO" << endl;
+        return void();
     }}
     else{
         cout << "NO" << endl;
+        return void();
     }
 }
 
