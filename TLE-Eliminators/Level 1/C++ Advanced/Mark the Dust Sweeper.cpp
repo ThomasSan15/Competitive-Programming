@@ -1,15 +1,16 @@
-//https://codeforces.com/problemset/problem/1862/B
+//https://codeforces.com/problemset/problem/1705/B
 
 #include <bits/stdc++.h>
-#include <algorithm>
-#include <complex>
-#include <map>
-#include <set>
-#include <string>
-#include <vector>
-#include <numeric>
-#include <array>
-#include <cassert>
+//#include <iostream>
+//#include <algorithm>
+//#include <complex>
+//#include <map>
+//#include <set>
+//#include <string>
+//#include <vector>
+//#include <numeric>
+//#include <array>
+//#include <cassert>
 
 using namespace std;
 
@@ -39,13 +40,15 @@ typedef vector<ll> vv;
 
 void solve() {
     int n; cin >> n;
-    vv b(n);
-    inp(b);
-    vv a;
-    for(int i = n*2 ; i >= 0; i--){
-        if(i == 0)
-   
+    vv a(n);
+    inp(a);
+    int sum = 0;
+    int total0 = 0;
+    for(int i = 0; i < n - 1; i++){
+        sum += a[i];
+        if( i + 1 < n && i > 0 && a[i] == 0 && a[i - 1] != 0  ) total0++;
     }
+    cout << sum + total0 << endl;
 }
 
 int main() {

@@ -1,15 +1,16 @@
-//https://codeforces.com/problemset/problem/1862/B
+//https://codeforces.com/problemset/problem/71/A
 
 #include <bits/stdc++.h>
-#include <algorithm>
-#include <complex>
-#include <map>
-#include <set>
-#include <string>
-#include <vector>
-#include <numeric>
-#include <array>
-#include <cassert>
+//#include <iostream>
+//#include <algorithm>
+//#include <complex>
+//#include <map>
+//#include <set>
+//#include <string>
+//#include <vector>
+//#include <numeric>
+//#include <array>
+//#include <cassert>
 
 using namespace std;
 
@@ -38,13 +39,12 @@ typedef vector<ll> vv;
 
 
 void solve() {
-    int n; cin >> n;
-    vv b(n);
-    inp(b);
-    vv a;
-    for(int i = n*2 ; i >= 0; i--){
-        if(i == 0)
-   
+    string s;
+    cin >> s;
+    if(s.size() > 10){
+        cout << s[0]<<s.size() - 2 <<s[s.size() - 1]<< endl;
+    }else{
+        cout << s << endl;
     }
 }
 

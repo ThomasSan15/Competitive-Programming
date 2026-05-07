@@ -1,15 +1,16 @@
-//https://codeforces.com/problemset/problem/1862/B
+//https://codeforces.com/problemset/problem/231/A
 
 #include <bits/stdc++.h>
-#include <algorithm>
-#include <complex>
-#include <map>
-#include <set>
-#include <string>
-#include <vector>
-#include <numeric>
-#include <array>
-#include <cassert>
+//#include <iostream>
+//#include <algorithm>
+//#include <complex>
+//#include <map>
+//#include <set>
+//#include <string>
+//#include <vector>
+//#include <numeric>
+//#include <array>
+//#include <cassert>
 
 using namespace std;
 
@@ -38,21 +39,33 @@ typedef vector<ll> vv;
 
 
 void solve() {
+    
     int n; cin >> n;
-    vv b(n);
-    inp(b);
-    vv a;
-    for(int i = n*2 ; i >= 0; i--){
-        if(i == 0)
-   
+    int val = 0;
+    int aux = 0;
+    int countp = 0;
+
+    for(int i = 0; i < n; i++){
+        for(int j = 0; j < 3; j++){
+            cin >> val ;
+            aux+= val;
+        }
+        if(aux >= 2){
+            countp++;
+            aux = 0;
+        }else{
+            aux = 0;
+        }
     }
+    cout << countp << endl;
+
 }
 
 int main() {
     fastio
 
     int t = 1;
-    cin >> t;
+
     while (t--) {
         solve();
     }
