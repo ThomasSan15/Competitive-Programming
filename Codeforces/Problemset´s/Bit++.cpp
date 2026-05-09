@@ -1,4 +1,4 @@
-//https://codeforces.com/problemset/problem/1985/D
+//https://codeforces.com/problemset/problem/282/A
 
 #include <bits/stdc++.h>
 //#include <iostream>
@@ -39,14 +39,26 @@ typedef vector<ll> vv;
 
 
 void solve() {
-    
+    int x = 0;
+    int n; cin >> n;
+    string s;
+    while(n--){
+        cin >> s;
+        if(s == "++X" || s == "X++"){
+            x++;
+        }else{
+            x--;
+        }
+    }
+    cout << x << endl;
+
 }
 
 int main() {
     fastio
 
     int t = 1;
-    cin >> t;
+    
     while (t--) {
         solve();
     }
