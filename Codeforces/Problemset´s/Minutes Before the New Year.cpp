@@ -1,4 +1,4 @@
-//
+//https://codeforces.com/problemset/problem/1283/A
 
 #include <bits/stdc++.h>
 //#include <iostream>
@@ -39,29 +39,18 @@ typedef vector<ll> vv;
 
 
 void solve() {
-    int n; cin >> n;
-    vv ans(10e6,0);
-
-    for(int i = 0; i < ans.size(); i++){
-        if(i == 0){
-            ans[i] = 1;
-        }else{
-        if(i > 6){
-            ans[i] = ans[i - 1] + ans[i - 2] + ans[i - 3] + ans[i - 4] + ans[i - 5] + ans[i - 6] ;
-        }else{
-            ans[i] = ans[i - 1] + 1;
-        }
-    }
-    }
-   
-    cout << ans[n-1] << endl;
+    int res = 0;
+    int h = 0, m = 0;
+    cin >> h >> m;
+    res = 1440 - (h * 60 + m);
+    cout << res << endl;
 }
 
 int main() {
     fastio
 
     int t = 1;
-    
+    cin >> t;
     while (t--) {
         solve();
     }

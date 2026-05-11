@@ -1,4 +1,4 @@
-//https://codeforces.com/contest/2227/problem/E
+//https://codeforces.com/contest/2218/problem/C
 
 #include <bits/stdc++.h>
 //#include <iostream>
@@ -40,39 +40,11 @@ typedef vector<ll> vv;
 
 void solve() {
     int n; cin >> n;
-    vv a(n);
-    inp(a);
-    int posm = 0;
-    vv aux = a;
-    int b = 0;
-    vv ans(n,0);
-    if(is_sorted(a.begin(),a.end())){
-        cout << "0" << endl; 
-        return void();
-    }
-    int counter = 0;
-    int mostConcatenate = 0;
-    
-    for ( int i = n ; i > 0; i--) {
-        int stickyflag = 1;
-        int temporalConcatenate = 0;
-        for ( int j = n-1 ; j >= 0 ; j-- ) {
-            if ( stickyflag == 1 && a.at(j)>= i ) {
-                temporalConcatenate ++;
-            }
-                if ( a.at(j) <  i && stickyflag == 1 ) {
-                    stickyflag = 0;
-                }
-                if ( stickyflag == 0 && a.at(j)>=i) {
-                    counter++;
-                }
-        }
-        if ( temporalConcatenate > mostConcatenate) {
-            mostConcatenate = temporalConcatenate;
-        }
-    }
-    
-    cout << counter + mostConcatenate << endl;
+    vv a(3*n);
+    for(int i = 0; i < 3 *n; i++){
+        a[i] = i +1;
+    }    
+    imp(a);
 }
 
 int main() {
