@@ -1,4 +1,4 @@
-//https://codeforces.com/problemset/problem/1/A
+//https://codeforces.com/contest/2218/problem/D
 
 #include <bits/stdc++.h>
 //#include <iostream>
@@ -39,18 +39,34 @@ typedef vector<ll> vv;
 
 
 void solve() {
-    int n = 0, m = 0, a = 0;
-    cin >> n >> m >> a;
-    cout << fixed << setprecision(0) << ceil((double) m / a) * ceil((double) n / a)  << endl;
-
-
+    int n; cin >> n;
+    vv ans;
+    int num = 1;
+    if(n > 1){
+        ans.push_back(1);
+        
+    for(int i = 0 , count = 1, current = 1; count < n ; num++){
+        int val = ans[i];
+        if(__gcd(val,num) == current ){
+            ans.push_back(num);
+            i++;
+            count++;
+            current++;
+        }
+    }
+    
+    for(int i = 0; i < ans.size(); i++){
+        cout << ans.at(i) << " ";
+    }
+    cout << endl;
+}
 }
 
 int main() {
     fastio
 
     int t = 1;
-    
+    cin >> t;
     while (t--) {
         solve();
     }
