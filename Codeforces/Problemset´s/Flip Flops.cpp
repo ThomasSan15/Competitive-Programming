@@ -1,4 +1,4 @@
-//
+//https://codeforces.com/problemset/problem/2209/A
 
 #include <bits/stdc++.h>
 //#include <iostream>
@@ -39,32 +39,34 @@ typedef vector<ll> vv;
 
 
 void solve() {
-    int n = 0; cin >> n;
-    string f;
-    int num = 0;
-    while(n--){ 
-    cin >> f;
-    for(char c: f){
-        if(c != '.'){
-            num += c - '0';
+ long long n, c, k; cin >> n >> c >> k;
+    vector< long long> a(n);
+    inp(a);
+    long long val = 0;
+    sort(ALL(a));
+    for(int i = 0; i < n; i++){
+      //  cout << " C = " << c << " Vence a " << a[i] << " K = " << k << endl;
+        if(c >= a[i]){
+            
+            val = c - a[i];
+            if(k - val >= 0){
+            a[i] += val;
+            k -= val;
+            }else{
+                a[i] += k;
+                k = 0;
+            }
+            c += a[i];
         }
     }
-   
-    if(num % 3 == 0 || num % 3 == 1){ 
-        cout << "VALID" << endl;
-    }else{
-        cout << "IMPOSSIBLE" << endl;
-    }
-    num = 0;
-}
-    
+    cout << c << endl;
 }
 
 int main() {
     fastio
 
     int t = 1;
-    
+    cin >> t;
     while (t--) {
         solve();
     }

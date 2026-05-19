@@ -1,4 +1,4 @@
-//
+//https://atcoder.jp/contests/abc309/tasks/abc309_b
 
 #include <bits/stdc++.h>
 //#include <iostream>
@@ -39,32 +39,17 @@ typedef vector<ll> vv;
 
 
 void solve() {
-    int n = 0; cin >> n;
-    string f;
-    int num = 0;
-    while(n--){ 
-    cin >> f;
-    for(char c: f){
-        if(c != '.'){
-            num += c - '0';
-        }
-    }
-   
-    if(num % 3 == 0 || num % 3 == 1){ 
-        cout << "VALID" << endl;
-    }else{
-        cout << "IMPOSSIBLE" << endl;
-    }
-    num = 0;
-}
-    
+    int n; cin >> n;
+    vector<vector<int>> matrix (n, vector<int>(n,0));
+    vector<vector<int>> aux (n, vector<int>(n,0));
+    for(int i = 0; i < n;)
 }
 
 int main() {
     fastio
 
     int t = 1;
-    
+    cin >> t;
     while (t--) {
         solve();
     }
