@@ -37,15 +37,25 @@ typedef vector<ll> vv;
 #define debug(x)
 #endif
 
-
+void binary(int n, vv &ans){
+    while(n > 0){
+        ans.push_back(n%2);
+        n /= 2;
+    }
+}
 void solve() {
     int n; cin >> n;
 
-    if(n % 2 == 0){
-        cout << "1" << endl;
-    }else{
-        cout << "2" << endl;
+    vv ans;
+    binary(n, ans);
+    int count = 0;
+
+    for(int i = 0; i < ans.size(); i++){
+        if(ans[i] == 1)count++;
     }
+    cout << count << endl; 
+
+    
 }
 
 int main() {
