@@ -43,18 +43,16 @@ void solve() {
 
     vv a(n);
     inp(a);
-    int b = 1;
-    int count = 0;
-    while(is_sorted(a)){
-    fore(i,0,n - 1){
-      if(a[i] < a[i + 1]){
-    
-        swap(a[i], a[i+1]);
-        count++;
+    vv ans(n);
+    ll count = 0;
+    for(int i = 0; i < n - 1;i++ ){
+      if(a[i] > a[i+1]){
+        
+      count += a[i]- a[i+1];
+      a[i+1] += a[i]- a[i+1];
       }
     }
-}
-cout << count - 1<< endl;
+    cout << count << endl;
 }
 
 int main() {
