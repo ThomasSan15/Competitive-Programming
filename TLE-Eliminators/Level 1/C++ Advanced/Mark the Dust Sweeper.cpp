@@ -42,13 +42,24 @@ void solve() {
     int n; cin >> n;
     vv a(n);
     inp(a);
-    int sum = 0;
-    int total0 = 0;
+    ll sum = 0;
+    int b = 0;
     for(int i = 0; i < n - 1; i++){
-        sum += a[i];
-        if( i + 1 < n && i > 0 && a[i] == 0 && a[i - 1] != 0  ) total0++;
+        if(b == 1){
+            if(a[i] == 0){
+                sum++;
+            }else{
+                sum += a[i];
+            }
+        }else{
+            if(a[i] != 0){
+                b = 1;
+                sum+= a[i];
+            }
+        }
+
     }
-    cout << sum + total0 << endl;
+    cout << sum << endl;
 }
 
 int main() {
