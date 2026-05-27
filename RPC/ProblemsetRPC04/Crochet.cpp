@@ -1,5 +1,3 @@
-//
-
 #include <bits/stdc++.h>
 //#include <iostream>
 //#include <algorithm>
@@ -39,41 +37,148 @@ typedef vector<ll> vv;
 
 
 void solve() {
-    string wi;
-    string we;
-    
-    int hi = 0;
-    int mi = 0;
-    int hd = 0;
-    int md = 0;
-    getline(cin,wi);
-    getline(cin,we);
-
-  
-    auto pos = wi.find(':');
-    cout << pos << endl;
-    cout << wi << endl;
-    hi = stoi(wi.substr(pos-2,2));
-    mi = stoi(wi.substr(pos+1, 2));
-    hd = stoi(we.substr(pos-2,2));
-    md = stoi(we.substr(pos+1, 2));
-
-    vector<string> dias = {"Mon","Tue","Wed","Thu","Fri","Sat","Sun"};
-    
-
-    
    
+
+    string inicio;
+    string fin;
+    getline(cin, inicio); 
+    getline(cin, fin);
+    string day_s = inicio.substr(0, 3); 
+    int day_start = 0;
+    if ( day_s.compare("Mon") == 0){
+        day_start = 1; 
+    }else if ( day_s.compare("Tue") == 0){
+        day_start = 2; 
+    }else if ( day_s.compare("Wed") == 0){
+        day_start = 3; 
+    }else if ( day_s.compare("Thu") == 0){
+        day_start = 4; 
+    }else if ( day_s.compare("Fri") == 0){
+        day_start = 5; 
+    }else if ( day_s.compare("Sat") == 0){
+        day_start = 6; 
+    }else if ( day_s.compare("Sun") == 0){
+        day_start = 7; 
+    }
+    
+    int hour_start = stoi(inicio.substr(4, 2));
+    int minute_start = stoi(inicio.substr(7, 2));
+
+    string day_e = fin.substr(0, 3); 
+    int day_end = 0;
+    if ( day_e.compare("Mon") == 0){
+        day_end = 1;
+    }else if ( day_e.compare("Tue") == 0){
+        day_end = 2;
+    }else if ( day_e.compare("Wed") == 0){
+        day_end = 3;
+    }else if ( day_e.compare("Thu") == 0){
+        day_end = 4;
+    }else if ( day_e.compare("Fri") == 0){
+        day_end = 5;
+    }else if ( day_e.compare("Sat") == 0){
+        day_end = 6;
+    }else if ( day_e.compare("Sun") == 0){
+        day_end = 7;
+    }
+    int hour_end = stoi(fin.substr(4, 2));
+    int minute_end = stoi(fin.substr(7, 2));
+
+
+    int day = 0; 
+    int hour = 0; 
+    int minute = 0; 
+
+    if( minute_start == minute_end && hour_start == hour_end && day_start == day_end){
+        cout << "1 week"<< endl;  
+        return; 
+    }
+
+    if (minute_start <= minute_end){
+        minute = minute_end - minute_start; 
+    } else {
+        minute = (60 - minute_start) + minute_end; 
+        hour_start ++; 
+    }
+
+    if (hour_start <= hour_end){
+        hour = hour_end - hour_start; 
+    } else {
+        hour = (24 - hour_start) + hour_end; 
+        day_start ++; 
+
+         
+    }
+    
+    if (day_start <= day_end){
+        day = day_end - day_start; 
+    }else{
+        day = 8 - day_start; 
+    }
+
+    if (day != 0 and hour != 0 and minute != 0){
+        if (day > 1){
+            cout << day << " days, "; 
+        }else{
+            cout << day << " day, "; 
+        }
+    }else if (day != 0 and minute == 0 and hour == 0){
+        if (day > 1){
+            cout << day << " days" << endl; 
+        }else{
+            cout << day << " day" << endl; 
+        }
+    }else if((day != 0 and minute != 0 and hour == 0) or (day != 0 and hour != 0 and minute == 0)){
+        if (day > 1){
+            cout << day << " days and "; 
+        }else{
+            cout << day << " day and "; 
+        }
+    }
+
+    if (hour != 0 and minute != 0 and day != 0){
+        if (hour > 1){
+            cout << hour << " hours, "; 
+        }else{
+            cout << hour << " hour, "; 
+        }
+    }else if ((hour != 0 and minute == 0 and day == 0)){
+        if (hour > 1){
+            cout << hour << " hours" << endl; 
+        }else{
+            cout << hour << " hour" << endl; 
+        }
+
+    }else if((hour != 0 and day != 0 and minute == 0)){
+        if (hour > 1){
+            cout << hour << " hours" << endl; 
+        }else{
+            cout << hour << " hour" << endl; 
+        }
+    }  else if ((hour != 0 and minute != 0 and day == 0)){
+        if (hour > 1){
+            cout << hour << " hours and " ; 
+        }else{
+            cout << hour << " hour and " ; 
+        }
+    }
+    
+    if( minute != 0){
+        if (minute > 1){
+            cout << minute << " minutes" << endl;
+        }else{
+            cout << minute << " minute" << endl; 
+        }
+    }
+    return; 
 
 }
 
+
 int main() {
     fastio
-
-    int t = 1;
     
-    while (t--) {
-        solve();
-    }
-
+    solve(); 
+    
     return 0;
 }
