@@ -1,4 +1,4 @@
-//https://cses.fi/problemset/task/1071
+//
 
 #include <bits/stdc++.h>
 //#include <iostream>
@@ -29,7 +29,7 @@ typedef pair<ll,ll> ii;
 typedef vector<ll> vv;
 
 //const ll INF = 1e18;
-//const int MOD = 1e9 + 7;
+const int MOD = 1e9 + 7;
 
 #ifdef LOCAL
 #define debug(x) cerr << #x << " = " << x << endl;
@@ -37,41 +37,18 @@ typedef vector<ll> vv;
 #define debug(x)
 #endif
 
-unsigned long long int simple(ll x, ll y){
-   
-    if(x % 2 == 0){
-        return (x*x) - (y-1);
-        
-    }else{
-        return pow((x-1),2) + 1 + (y-1);
-    }
-
-}
-
-unsigned long long int total(ll x, ll y){
-    
-    if(y <= x ){
-        return simple(x,y);
-    }else if(y % 2 != 0){
-        return simple(y,y) + (y-x);
-    }else{
-        return simple(y,y) - (y-x);
-    } 
-
-}
 
 void solve() {
-    unsigned long long int x,y; cin >> x >> y;
-
-    cout << (unsigned long long int )total(x,y) << endl;
-  
+        int n; cin >> n;
+        
+    cout << fixed << setprecision(0) << (unsigned long long int) pow(2,n) % MOD  << endl;
 }
 
 int main() {
     fastio
 
     int t = 1;
-    cin >> t;
+
     while (t--) {
         solve();
     }

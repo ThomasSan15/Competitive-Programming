@@ -1,4 +1,4 @@
-//https://cses.fi/problemset/task/1071
+//https://cses.fi/problemset/task/1090
 
 #include <bits/stdc++.h>
 //#include <iostream>
@@ -37,41 +37,36 @@ typedef vector<ll> vv;
 #define debug(x)
 #endif
 
-unsigned long long int simple(ll x, ll y){
-   
-    if(x % 2 == 0){
-        return (x*x) - (y-1);
-        
-    }else{
-        return pow((x-1),2) + 1 + (y-1);
-    }
-
-}
-
-unsigned long long int total(ll x, ll y){
-    
-    if(y <= x ){
-        return simple(x,y);
-    }else if(y % 2 != 0){
-        return simple(y,y) + (y-x);
-    }else{
-        return simple(y,y) - (y-x);
-    } 
-
-}
 
 void solve() {
-    unsigned long long int x,y; cin >> x >> y;
-
-    cout << (unsigned long long int )total(x,y) << endl;
-  
+    int n, x; cin >> n >> x;
+    vv a(n);
+    inp(a);
+    ll ans = 0;
+    sort(ALL(a));
+    ll sum = a[0];
+    imp(a);
+    for(int i = 0; i < n; i++){
+        if( i < n-1 && sum + a[i+1] <= x){
+            sum += a[i+1];
+        }else if(i < n-1 && sum + a[n - 1 - i] <= x){
+           
+            sum += a[n-1-i];
+        }else{
+            ans++;
+            sum = a[i+1];
+        }
+        cout << "sum val " << sum << endl;
+    }
+   
+    cout << ans << endl;
 }
 
 int main() {
     fastio
 
     int t = 1;
-    cin >> t;
+   
     while (t--) {
         solve();
     }
