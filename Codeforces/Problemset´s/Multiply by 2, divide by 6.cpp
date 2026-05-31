@@ -57,6 +57,27 @@ void solve() {
         }
 
         cout << ans << endl;
+        
+        //this is not the best solution to this problem.
+
+        /*The best solution in this problem is the next:
+        let count2 be the exponent of 2 in the prime factorization of the number
+        and let be count3 the number of power of 3 that have the number
+        if count2 > count3, the answer is -1, why? = 
+        for example n = 12; is equivalent to 2^2 * 3^1,
+        if we multiply de number by 2 we add one power of 2, 
+        12 * 2 = 2^3 * 3^1, but if we divide the number by 6 we decrease both exponents by 1
+        in 1 both exponents, for example = 12 / 6 = 2^1 * 3^1, now that´s the reason
+        why if count2 > count3 the ans is -1, because we only can increase the value
+        of power of 2, not the power of 3. But if the number has 
+        count2 <= count3, the answer is (count3-count2) + count3, why? =
+        because we need the same power in both numbers and later divide the number in 6
+        so if we have n = 108 = 2^2 * 3^3; if we multiply by 2 = 108 * 2 = 2^3 * 3^3,
+        so that's the reason of the (count3 - count2) (the diference of the power of both numbers),
+        and + count3 because that is the number of times that we have divide by 6 
+        to get the 1.
+        */
+       // ans = (count3 - count2) + count3
     
     
 }
