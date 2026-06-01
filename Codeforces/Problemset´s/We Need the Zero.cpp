@@ -1,4 +1,4 @@
-//
+//https://codeforces.com/contest/1805/problem/A
 
 #include <bits/stdc++.h>
 //#include <iostream>
@@ -42,32 +42,16 @@ void solve() {
     int n; cin >> n;
     int val = 0;
     
-    set<int> st;
     
-    for(int i = 0; i < n; i++){
-        cin >> val;
-        if(st.contains(val)){
-            cout << "-1" << endl;
-            return void();
-        }else{
-            st.insert(val);
-        }
-    }
-    val = 0;
-    int ans = *st.begin();
-    while(true){
-    
-     for(auto it = next(st.begin()); it != st.end(); it++){
-        ans = (ans ^ (*it + val));
+
+    val = 1;
+    int ans = *st.begin() ;
+
+   for(auto it = next(st.begin()); it != st.end(); it++){
+        ans = (ans ^ (*it ));
      }
-     if(ans == 0){
-        cout << val << endl;
-        return void();
-     }else{
-    val++;
-    ans = (*st.begin() + val);
-    }    
-}
+
+     cout << ans << endl;
     
 }
 
