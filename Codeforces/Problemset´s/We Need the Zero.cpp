@@ -42,16 +42,27 @@ void solve() {
     int n; cin >> n;
     int val = 0;
     
-    
+    vv a(n);
+    inp(a);
 
-    val = 1;
-    int ans = *st.begin() ;
+    for(int i = 0; i < n ; i++){
+        if(i==0){
+            val = a[i];
+        }else{
+            val ^= a[i];
+        }
+    }
 
-   for(auto it = next(st.begin()); it != st.end(); it++){
-        ans = (ans ^ (*it ));
-     }
-
-     cout << ans << endl;
+    if(n % 2 != 0){
+        cout << val << endl; 
+    }else{
+        if(val == 0){
+            cout << 0  << endl;
+        }else{
+        cout << -1 << endl;
+    }
+}
+     
     
 }
 
