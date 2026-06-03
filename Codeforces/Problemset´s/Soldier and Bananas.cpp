@@ -1,4 +1,4 @@
-//https://codeforces.com/problemset/problem/318/A
+//https://codeforces.com/problemset/problem/546/A
 
 #include <bits/stdc++.h>
 //#include <iostream>
@@ -39,14 +39,18 @@ typedef vector<ll> vv;
 
 
 void solve() {
-    ll n, k; cin >> n >> k;
-    
-    if(n%2 == 0){
-        if(k <= n / 2){
-            cout << n - 1 - (2*k);
-        }
-    }
+    int k , n , w; cin >> k >> n >> w;
 
+    int ans = n;
+
+    for(int i = 1 ; i <= w; i++){
+        ans -= i * k;
+    }
+    if(ans >= 0){
+        cout << 0 << endl;
+    }else{
+        cout << abs(ans) << endl;
+    }
 }
 
 int main() {
