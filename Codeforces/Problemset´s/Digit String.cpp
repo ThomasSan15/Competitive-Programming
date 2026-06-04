@@ -1,4 +1,4 @@
-//https://codeforces.com/problemset/problem/1883/C
+//https://codeforces.com/problemset/problem/2230/B
 
 #include <bits/stdc++.h>
 //#include <iostream>
@@ -39,50 +39,39 @@ typedef vector<ll> vv;
 
 
 void solve() {
- int n , k; cin >> n >> k;
- vv a(n);
- inp(a);
- int ans = INT_MAX;
- int val = 0;
- int even = 0;
- if(k == 4){
-        for(int i = 0; i < n; i++){
-            val = a[i];
-            if(val % 2 == 0){
-                even++;
-            }
-            if(val <= k){
-        ans = min(ans, k-val);
-         }else{
-        if(val % k == 0){
-            ans = min(ans, (val % k)  );
-        }else{
-        ans = min(ans, k - (val % k)  );
-    }
-    }
-        }
-        if(even >= 2){
-            ans = 0;
-        }else{
-        ans = min(ans,2 - even);
-        }
+    string s;
+    cin >> s;
+    int ans = 0;
+    int aux = 0;
+    int one = 0;
+    int three = 0;
+    int two = 0;
 
-    }else{
-        for(int i = 0; i < n; i++){
-            val = a[i];
-        if(val <= k){
-            ans = min(ans, k-val);
-        }else{
-            if(val % k == 0){
-                ans = min(ans, (val % k)  );
-            }else{
-            ans = min(ans, k - (val % k)  );
+    for(int i = 0, r = s.size(); i < s.size() ; i++){
+        if(s[r] != '2'){
+            r--;
         }
+     if(s[i] == '4'){
+        ans++;
+     }
+     if(s[i] == '1' && i <= r){
+        aux++;
+        one++;
+     }
+       if(s[i] == '3' && i <= r){
+        aux++;
+        three++;
+     }
+     if(aux > 0){
+        if(s[i] == '2'){
+            two++;
+            aux--;
         }
-        }
+     }
+     
     }
- cout << ans << endl;
 
+    cout << ans + min(one + three, two) << endl;  
 }
 
 int main() {
