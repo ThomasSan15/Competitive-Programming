@@ -40,11 +40,17 @@ for(int i = 0; i < a.size() - 1; i++){
 
 int main(){
   string a;
-  getline(cin , a);
   
-  if(a.at(0) != '*'){
+  
+  while(true){
+    getline(cin , a);
+    if(a == "*"){
+      break;
+    }
   a = reformed(a);
 
-    palindrome(a) ?  cout << "Y" : cout << "N";}
+    palindrome(a) ?  cout << "Y" << endl: cout << "N" << endl;
+  }
     return 0;
+
 }
