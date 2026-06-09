@@ -1,4 +1,4 @@
-//
+//https://codeforces.com/contest/2233/problem/B
 
 #include <bits/stdc++.h>
 //#include <iostream>
@@ -39,41 +39,48 @@ typedef vector<ll> vv;
 
 
 void solve() {
-        int n; cin >> n;
-    int num = 1;
-    int b = 0;
-    vector<vector<int>> matriz(4,vector<int> (n));
-
-    for(int i = 0; i < 4; i++,){
-        if(i != 0 && b == 1){
-            num--;
-        }else if(i != 0 && b == 0){
-            num++;
+    int n; cin >> n;
+    vv ans;
+    if(n % 2 == 0){
+        for(int i = 1; i <= n; i += 2){
+            ans.pb(i);
+            ans.pb(i+1);
+            ans.pb(i);
+            ans.pb(i);
+            ans.pb(i+1);
+            ans.pb(i+1);
+            ans.pb(i);
+            ans.pb(i+1);
         }
-        for(int j = 0; j < n; j++){
-            matriz[i][j] = num;
-            if(num == 1 && b == 1){
-                b = 0;
-            }
-            if(num == n && b == 0){
-                b = 1;
-            }
-            if(b == 1){
-            num--;
-             }else if(b == 0){
-            num++;
-             }
+    }else{
+         for(int i = 1; i <= 3; i += 3){
+            ans.pb(i);
+            ans.pb(i);
+            ans.pb(i+1);
+            ans.pb(i+2);
+            ans.pb(i+2);
+            ans.pb(i+1);
+            ans.pb(i+2);
+            ans.pb(i+1);
+            ans.pb(i+1);
+            ans.pb(i);
+            ans.pb(i+2);
+            ans.pb(i);
+        }
+        for(int i = 4; i <= n; i += 2){
+            ans.pb(i);
+            ans.pb(i+1);
+            ans.pb(i);
+            ans.pb(i);
+            ans.pb(i+1);
+            ans.pb(i+1);
+            ans.pb(i);
+            ans.pb(i+1);
         }
     }
-
-     for(int i = 0; i < 4; i++, num++){
-        for(int j = 0; j < n; j++, num++){
-             
-            cout << matriz[i][j] << " ";
-        }
-    }
+    imp(ans);
     cout << endl;
-    
+   
 }
 
 int main() {
