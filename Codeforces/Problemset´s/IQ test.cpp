@@ -1,4 +1,4 @@
-//https://codeforces.com/contest/2233/problem/A
+//https://codeforces.com/problemset/problem/25/A
 
 #include <bits/stdc++.h>
 //#include <iostream>
@@ -39,39 +39,23 @@ typedef vector<ll> vv;
 
 
 void solve() {
- 
-    int n, x , y ,z; cin >> n >> x >> y >> z;
-
-    int ans1 = 0;
-    int ans2 = 0;
-    int aux = n;
-    
-
-    while(aux > 0){
-        aux -= x;
-        aux -=y;
-        ans1++;
+    int n; cin >> n;
+    vv a(n);
+    inp(a);
+    int od  =0;
+    int ev = 0;
+    for(int i = 0; i < n;i++){
+        if(a[i] % 2 == 0 && a[i] != 2)ev = 1;
+        if(a[i] % 3 == 0 && a[i] != 3)od = 1;
+        
     }
-    aux = n;
-    while(aux > 0){
-        aux -= x;
-        if(z == 0){
-            aux -= 10*y;
-        }else{
-            z--;
-        }
-        ans2++;
-    }
-
-    cout << min(ans1,ans2) << endl;
-
 }
 
 int main() {
     fastio
 
     int t = 1;
-    cin >> t;
+    
     while (t--) {
         solve();
     }
