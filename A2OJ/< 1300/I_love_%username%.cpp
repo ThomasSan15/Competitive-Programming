@@ -1,4 +1,4 @@
-//https://codeforces.com/contest/1766/problem/A
+//https://codeforces.com/problemset/problem/155/A
 
 #include <bits/stdc++.h>
 //#include <iostream>
@@ -40,32 +40,35 @@ typedef vector<ll> vv;
 
 void solve() {
     int n; cin >> n;
+    vv a(n);
+    inp(a);
+    int mx = INT_MIN;
+    int mn = INT_MAX;
     int ans = 0;
-    vv extremr;
 
-    for(int i = 1; i < n; )
-    if(n > 10){
-        ans = 10;
-        for(int i = 10; i <= n;){
-            if(i + 10 <= n){
-            ans++;
-            i += 10;
+    for(int i = 0; i < n; i++){
+        if(i== 0){
+            mx = a[i];
+            mn = a[i];
         }else{
-            break;
+            if(a[i] > mx){
+                ans++;
+                mx = a[i];
+            }
+            if(a[i] < mn){
+                ans++;
+                mn = a[i];
+            }
         }
     }
-        cout << ans << endl;
-    }else{
-        cout << n << endl;
-    }
-
+    cout << ans << endl;
 }
 
 int main() {
     fastio
 
     int t = 1;
-    cin >> t;
+    
     while (t--) {
         solve();
     }
