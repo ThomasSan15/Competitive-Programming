@@ -49,7 +49,6 @@ void solve() {
     int p = 0;
 
     for(int i = 0; i < n; i++){
-        
        if(( (i < n - 1) && a[i] > a[i+1]) ){
         if(p == 0){
             l = i;
@@ -65,7 +64,7 @@ void solve() {
          
        }
     }
-
+    
     if(aux.size() == 0){
         cout << "yes" << endl;
         cout << 1 << " " << 1<< endl;
