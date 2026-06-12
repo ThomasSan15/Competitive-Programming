@@ -40,9 +40,7 @@ typedef vector<ll> vv;
 void solve() {
     int n ; cin >> n;
     string s; cin >> s;
-    int count = 0;
-    int aux = 0;
-    int pos = -1;
+    int ans = 0;
 
     if(n == 1 || n == 2){
         cout << "1" << endl;
@@ -51,32 +49,31 @@ void solve() {
 
     for(int i = 0; i < n; i++){
 
-        if(s.at(i) == '0' && aux == 0){
-            aux++;
-            pos = i;
-        }else{
-        if(s.at(i) == '0' && aux == 2){
-            aux++;
-            if(pos != 0){
-                pos = i;
-            }
-        }else{
-            if(s.at(i) == '0') aux++;
+        // if(i >= 2 && i < n-2 && ((s[i] == '0' && s[i-1] == '0' && s[i-2] == '1' ) ||(s[i] == '0' && s[i+1] == '0' && s[i+2] == '1'))){
+        //     s[i] = '1';
+        // }else if(i == 0 && s[i] == '0' && s[i+1] == '0' && s[i+2] == '1'){
+        //     s[i] = '1';
+        // }else if(i == n-2 && (s[i] == '0' && s[i-1] == '0' && s[i+1] == '0' )){
+        //     s[i] = '1';
+        // }
+
+        if(i == 0 && s[i] == '0' && s[i+1] == '0' && s[i+2] == '1'){
+            s[i] = '1';
+        }else if(i == n - 1 && s[i] == '0' && s[i-1] == '0' && s[i-2] == '1'){
+            s[i] = '1';
+        }else if(i > 0 && i < n-1 && s[i] == '0' && s[i-1] == '0' && s[i+1] == '0'){
+            s[i] = '1';
         }
-    }
-
-        if(aux == 3 && (pos == 0 || pos == n - 1) && n > 3){
-             count += 2;
-            aux = 0;}
         
-        if(aux == 3){
-             count++;
-            aux = 0;}
-    } 
+       }
+    
 
-    fore(i,0,n) if(s.at(i) == '1') count++;
+    fore(i,0,n)if(s[i] == '1')ans++;
 
-    cout << count <<endl;
+    cout << ans << endl;
+  //  cout << s << endl;
+
+    
 }
 
 int main() {

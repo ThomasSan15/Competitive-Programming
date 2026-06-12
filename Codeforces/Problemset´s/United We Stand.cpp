@@ -1,15 +1,16 @@
-//https://codeforces.com/problemset/problem/1862/B
+//https://codeforces.com/problemset/problem/1859/A
 
 #include <bits/stdc++.h>
-#include <algorithm>
-#include <complex>
-#include <map>
-#include <set>
-#include <string>
-#include <vector>
-#include <numeric>
-#include <array>
-#include <cassert>
+//#include <iostream>
+//#include <algorithm>
+//#include <complex>
+//#include <map>
+//#include <set>
+//#include <string>
+//#include <vector>
+//#include <numeric>
+//#include <array>
+//#include <cassert>
 
 using namespace std;
 
@@ -42,22 +43,27 @@ void solve() {
     vv a(n);
     inp(a);
     vv b;
-    
-    for(int i = 0; i < n ; i++){
-        if(i == n-1){
+    vv c;
+    sort(ALL(a));
+    for(int i = 0; i < n; i++){
+        if(i == 0){
             b.pb(a[i]);
+        }else{       
+        if(b[0] %  a[i] != 0){
+            c.pb(a[i]);
         }else{
-        if(i  < n-1 && a[i] <= a[i+1]){
-            b.push_back(a[i]);
-        }else{
-            b.push_back(a[i]);
-            b.pb(a[i+1]);
+            b.pb(a[i]);
         }
     }
 }
-
-    cout << b.size() << endl;
-    imp(b);
+    
+    if(b.size() && c.size()){
+        cout << b.size() << " " << c.size() << endl;
+        imp(b);
+        imp(c);
+    }else{
+        cout << -1 << endl;
+    }
 }
 
 int main() {
