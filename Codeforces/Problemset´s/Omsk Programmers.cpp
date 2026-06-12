@@ -1,4 +1,4 @@
-//
+//https://codeforces.com/problemset/problem/2236/C
 
 #include <bits/stdc++.h>
 //#include <iostream>
@@ -39,28 +39,44 @@ typedef vector<ll> vv;
 
 
 void solve() {
-    int n,k; cin >> n >> k;
-    string s;
-    cin >> s;
-    for(int i = 0; i < n; i++){
-        if(i + k < n && s[i] == '1'){
-            s[i] = '0';
-            if(s[i+k] == '0'){
-                s[i+k] = '1';
-            }else{
-            s[i+k] = '0';
-        }
-    }
-    }
-   
-        fore(i,0,n){
-            if(s[i] == '1'){
-            cout << "NO" << endl;
-            return;
-        }
-    }
-    cout << "YES" << endl;
+      ll a, b, x; cin >> a >> b >> x;
 
+    ll ans2 = INT_MAX;
+    ll aux = 0;
+    vector<pair<int,int>> ansa ;
+    vector<pair<int,int>> ansb ;
+
+     
+        ansa.pb({a,aux});
+        ansb.pb({b,aux});
+        while(a > 0){
+            a = floor(a/x);
+            aux++;
+            ansa.pb({a,aux});
+            if(a == 0){
+                break;
+            }
+        }   
+        aux = 0;
+        while(b > 0){
+            b = floor(b/x);
+            aux++;
+            ansb.pb({b,aux});
+            if(b == 0){
+                break;
+            }
+        }
+        
+
+        ll val = 0;
+        for(int i = 0; i < ansa.size(); i++){
+            for(int j = 0; j < ansb.size(); j++){
+                    val = ansa[i].second + ansb[j].second + abs(ansa[i].first - ansb[j].first);
+                    ans2 = min(ans2,val);
+            }
+        }
+
+        cout << ans2 << endl;    
 }
 
 int main() {

@@ -39,7 +39,14 @@ typedef vector<ll> vv;
 
 
 void solve() {
-    
+    int n; cin >> n;
+    vv a(n);
+    inp(a);
+
+    int mx = *max_element(ALL(a));
+    int mn = *min_element(ALL(a));
+
+    cout << mx - mn + 1 << endl;
 }
 
 int main() {
