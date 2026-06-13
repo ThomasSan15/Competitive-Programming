@@ -37,29 +37,42 @@ typedef vector<ll> vv;
 #define debug(x)
 #endif
 
-
-void solve() {
-    int n; cin >> n;
-    vv dp;
-    vv prefix;
-    for(int i = 0, j = 0; i < n; i++){
-        if(i < 6){
-            dp.pb(pow(2,i));
-            if(i == 0){
-                prefix.pb(1);
-            }else{
-                prefix.pb(prefix[i-1] + dp[i] );
-            }
-        }else{
-            dp.pb(pow(2,i) - (prefix[j] + j));
-            prefix.pb( prefix[i-1] + dp[i]);
-            j++;
-        }  
+int maxdigit(const string& s){
+    int ans = 0;
+    for(char c : s){
+        ans = max(ans, c - '0');
     }
+    return ans;
+}
+void solve() {
+    string s; cin >> s;
+    ll denom = 1LL * (s.size() * (s.size() + 1)) / 2;
+    string aux;
+    ll numerator = 0;
+    for(int i = 0; i < s.size(); i++){
+        for(int j = i; j < s.size(); j++){
+            aux += s[j];
+            numerator += maxdigit(aux);
+        }
+        aux.clear();
+       
+    }
+    if((int)numerator % (int)denom == 0){
+         cout << numerator / denom << endl;
+    }else if((numerator / denom) < 1){
+         ll g  = gcd(numerator,denom);
+        numerator /= g;
+        denom /= g;
+        cout << numerator << "/" << denom << endl;
 
-    imp(dp);
-    imp(prefix);
-    cout << dp[dp.size() - 1] << endl;
+    }else{
+        ll g  = gcd(numerator,denom);
+        numerator /= g;
+        denom /= g;
+
+        cout << (int)numerator / (int)denom << " " << (int)numerator % (int)denom << "/" << denom << endl;
+    }
+   
 }
 
 int main() {

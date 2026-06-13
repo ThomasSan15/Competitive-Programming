@@ -21,7 +21,7 @@ using namespace std;
 #define fore(i,a,b) for(ll i = a, jet = b; i < jet; i++)
 #define ALL(x) (x).begin(), (x).end()
 #define SZ(x) (int)(x).size()
-#define imp(v) {for(auto i : v) cout << i << " "; cout << "\n";}
+#define imp(v) {for(auto i : v) cout << i ; cout << "\n";}
 #define inp(v) {for(auto &i : v) cin >> i;}
 
 typedef long long ll;
@@ -39,34 +39,35 @@ typedef vector<ll> vv;
 
 
 void solve() {
-    int n; cin >> n;
-    vv dp;
-    vv prefix;
-    for(int i = 0, j = 0; i < n; i++){
-        if(i < 6){
-            dp.pb(pow(2,i));
-            if(i == 0){
-                prefix.pb(1);
-            }else{
-                prefix.pb(prefix[i-1] + dp[i] );
-            }
-        }else{
-            dp.pb(pow(2,i) - (prefix[j] + j));
-            prefix.pb( prefix[i-1] + dp[i]);
-            j++;
-        }  
-    }
+    int r, c;
+    cin >> r >> c;
+    
+   
+    
+    vector<string> matrix(r);
 
-    imp(dp);
-    imp(prefix);
-    cout << dp[dp.size() - 1] << endl;
+for(int i = 0; i < r; i++){
+    cin >> matrix[i];
+}
+
+
+
+    vector<char> ans;
+    for(int j = 0; j < c; j++){
+    for(int i = 0; i < r; i++){
+        if(matrix[i][j] != '.'){
+            ans.pb(matrix[i][j]);
+        }
+    }
+}
+imp(ans);
 }
 
 int main() {
     fastio
 
     int t = 1;
-    
+   
     while (t--) {
         solve();
     }

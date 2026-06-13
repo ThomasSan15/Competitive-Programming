@@ -39,34 +39,15 @@ typedef vector<ll> vv;
 
 
 void solve() {
-    int n; cin >> n;
-    vv dp;
-    vv prefix;
-    for(int i = 0, j = 0; i < n; i++){
-        if(i < 6){
-            dp.pb(pow(2,i));
-            if(i == 0){
-                prefix.pb(1);
-            }else{
-                prefix.pb(prefix[i-1] + dp[i] );
-            }
-        }else{
-            dp.pb(pow(2,i) - (prefix[j] + j));
-            prefix.pb( prefix[i-1] + dp[i]);
-            j++;
-        }  
-    }
-
-    imp(dp);
-    imp(prefix);
-    cout << dp[dp.size() - 1] << endl;
+    int n,m; cin >> n >> m;
+    
 }
 
 int main() {
     fastio
 
     int t = 1;
-    
+    cin >> t;
     while (t--) {
         solve();
     }
