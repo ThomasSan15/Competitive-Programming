@@ -40,26 +40,21 @@ typedef vector<ll> vv;
 
 void solve() {
     int n; cin >> n;
-    vv dp;
+    vv dp = {0,1,2,4,8,16,32};
     vv prefix;
-    for(int i = 0, j = 0; i < n; i++){
-        if(i < 6){
-            dp.pb(pow(2,i));
-            if(i == 0){
-                prefix.pb(1);
-            }else{
-                prefix.pb(prefix[i-1] + dp[i] );
-            }
-        }else{
-            dp.pb(pow(2,i) - (prefix[j] + j));
-            prefix.pb( prefix[i-1] + dp[i]);
-            j++;
-        }  
-    }
 
+    if(n <= 6){
+        cout << dp[n] << endl;
+    }else{
+        for(int i = 7; i <= n; i++){
+            dp.pb(dp[i -1] + dp[i -2] + dp[i -3] + dp[i -4] + dp[i -5] + dp[i -6] );
+        }
+        cout << dp[n] << endl;
+    }
     imp(dp);
     imp(prefix);
     cout << dp[dp.size() - 1] << endl;
+
 }
 
 int main() {

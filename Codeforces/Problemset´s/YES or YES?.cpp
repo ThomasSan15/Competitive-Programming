@@ -1,4 +1,4 @@
-//https://codeforces.com/problemset/problem/2162/B
+//https://codeforces.com/contest/1703/problem/A
 
 #include <bits/stdc++.h>
 //#include <iostream>
@@ -37,28 +37,19 @@ typedef vector<ll> vv;
 #define debug(x)
 #endif
 
-int is_palindrome(string s){
-    for(int i = 0, j = s.size() - 1; i != j; i++, j--){
-        if(s[i] != s[j]){
-            return 0;
-        }
-    }
-    return 1;
-}
+
 void solve() {
-    int n; cin >> n;
     string s;
     cin >> s;
-   
-    if(is_palindrome(s)){
-        cout << 0 << endl;
-    }else{
-        vv index;
-        for(int i = 0; i < s.size(); i++){
-            
-        }
-    }
     
+    for(char &c : s){
+        c = tolower(c);
+    }
+    if(s == "yes"){
+        cout << "YES" << endl;
+    }else{
+        cout << "NO" << endl;
+    }
 }
 
 int main() {
