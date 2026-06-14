@@ -42,21 +42,22 @@ void solve() {
     int n, m, h; cin >> n >> m >> h;
     vv a(n);
     inp(a);
-    vv original = a;
+    vv sum(n+1);
+
     int pos = 0;
     int value = 0;
     while(m--){
         cin >> pos >> value;
-        if(value <= h){
-        if(a[pos - 1] + value > h){
-            a = original;
+        if(sum[pos] + value + a[pos-1] > h ){
+            sum[pos] = 0;
         }else{
-            a[pos - 1] += value;
+        sum[pos] += value + a[pos-1];
         }
-    }else{
-        a = original;
-        continue;
     }
+    imp(sum);   
+    
+    for(int i = 1; i < sum.size(); i++){
+        a[i-1] = sum[i] % h;
     }
 
     imp(a);

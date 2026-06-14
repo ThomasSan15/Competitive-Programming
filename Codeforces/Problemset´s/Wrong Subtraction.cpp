@@ -1,4 +1,4 @@
-//https://codeforces.com/contest/2218/problem/C
+//https://codeforces.com/problemset/problem/977/A
 
 #include <bits/stdc++.h>
 //#include <iostream>
@@ -40,30 +40,22 @@ typedef vector<ll> vv;
 
 void solve() {
     int n; cin >> n;
-    vv a(3*n);
-    for(int i = 0, num = 1, count = 1; i < n; count++){
-        if(count == 2){
-            a[i] = 3 * num - i;
-            
-        }else if(count == 3){
-            count = 0;
-             a[i] = 3 * num ;
-             num++;
-             i++;
-        
+    int k; cin >> k;
+    while(k--){
+        if(n % 10 == 0){
+            n/= 10;
         }else{
-        a[i] = i+1;
-        
-    }    
-}
-    imp(a);
+            n--;
+        }
+    }
+    cout << n << endl;
 }
 
 int main() {
     fastio
 
     int t = 1;
-    cin >> t;
+ 
     while (t--) {
         solve();
     }
