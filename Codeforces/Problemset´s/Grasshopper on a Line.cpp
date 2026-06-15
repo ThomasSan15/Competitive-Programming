@@ -52,6 +52,8 @@ void solve() {
             rest--;
         }
     }
+    //this is easier than using a loop, if x is not divisible by k, then the answer is x
+    //otherwise, the answer is 1 and x - 1, because k > 2, so we only need split x into 1 and x - 1
 
     cout << ans.size() << endl;
     imp(ans);
