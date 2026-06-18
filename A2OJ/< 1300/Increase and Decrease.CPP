@@ -1,4 +1,4 @@
-//
+//https://codeforces.com/problemset/problem/246/B
 
 #include <bits/stdc++.h>
 //#include <iostream>
@@ -39,25 +39,23 @@ typedef vector<ll> vv;
 
 
 void solve() {
-    string st;
-    string end;
-    getline(cin,st);
-    getline(cin,end);
-    int ans = 0;
-    int hour1 = 0, hour2 = 0;
-    hour1 = stoi(st.substr(0,2)) * 60 + stoi(st.substr(3,2));
-    hour2 = stoi(end.substr(0,2)) * 60 + stoi(end.substr(3,2));
-   
-    ans = (hour2 - hour1)/2;
+    int n; cin >> n;
+    vv a(n);
+    inp(a);
+    int f = 0;
 
-    if((hour1 + ans) / 60 < 10 && (hour1 + ans) % 60 < 10){
-        cout << "0" <<(hour1 + ans) / 60 << ":" << "0" << (hour1 + ans)%60 << endl;
-    }else if((hour1 + ans) / 60 < 10){
-         cout << "0" <<(hour1 + ans) / 60 << ":" << (hour1 + ans)%60 << endl;
-    }else if((hour1 + ans) % 60 < 10){
-         cout << (hour1 + ans) / 60 << ":" << "0" << (hour1 + ans)%60 << endl;
-    }else{
-    cout << (hour1 + ans) / 60 << ":" << (hour1 + ans)%60 << endl;
+    int mx = *max_element(ALL(a));
+    int count = 0;
+
+    for(int i = 0; i < n; i++){
+        if(a[i] == mx && f == 0){
+            f = 1;
+        }else{
+            count += a[i];
+        }
+    }
+    if(mx % (n - 1)){
+        
     }
 }
 
@@ -65,7 +63,7 @@ int main() {
     fastio
 
     int t = 1;
-    
+  
     while (t--) {
         solve();
     }
