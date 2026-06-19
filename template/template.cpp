@@ -20,6 +20,7 @@ using namespace std;
 #define snd second
 #define fore(i,a,b) for(ll i = a, jet = b; i < jet; i++)
 #define ALL(x) (x).begin(), (x).end()
+#define RALL(x) (x).rbegin(), (x).rend()
 #define SZ(x) (int)(x).size()
 #define imp(v) {for(auto i : v) cout << i << " "; cout << "\n";}
 #define inp(v) {for(auto &i : v) cin >> i;}
@@ -27,7 +28,13 @@ using namespace std;
 
 typedef long long ll;
 typedef pair<ll,ll> ii;
+typedef pair<string,ll> sii;
 typedef vector<ll> vv;
+typedef vector<int> vi;
+typedef vector<ii> vii;
+typedef vector<string> vvs;
+typedef vector<set<ll>> vst;
+
 
 // const ll INF = 1e18;
 // const int MOD = 1e9 + 7;
