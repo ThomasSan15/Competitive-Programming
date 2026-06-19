@@ -1,4 +1,4 @@
-//https://codeforces.com/problemset/problem/1849/B
+//https://codeforces.com/problemset/problem/1831/A
 
 #include <bits/stdc++.h>
 //#include <iostream>
@@ -39,26 +39,17 @@ typedef vector<ll> vv;
 
 
 void solve() {
-    int n, k; cin >> n >> k;
+    int n; cin >> n;
     vv a(n);
     inp(a);
-    vv ans;
+    vv b;
+    int sum = *min_element(ALL(a)) + *max_element(ALL(a));
 
-        int mod = 0;
-        while(mod < k ){
-
-        for(int i= 0; i < n; i++){
-            
-            if(a[i] % k == mod){
-                ans.pb(i+1);
-            }
-        }
-        mod++;
+    for(int i = 0; i < n; i++){
+        b.pb(sum - a[i]);
     }
 
-
-    imp(ans);
-
+   imp(b);
 }
 
 int main() {
