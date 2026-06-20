@@ -1,16 +1,16 @@
-//
+//https://codeforces.com/contest/1352/problem/C
 
 #include <bits/stdc++.h>
-// #include <iostream>
-// #include <algorithm>
-// #include <complex>
-// #include <map>
-// #include <set>
-// #include <string>
-// #include <vector>
-// #include <numeric>
-// #include <array>
-// #include <cassert>
+//#include <iostream>
+//#include <algorithm>
+//#include <complex>
+//#include <map>
+//#include <set>
+//#include <string>
+//#include <vector>
+//#include <numeric>
+//#include <array>
+//#include <cassert>
 
 using namespace std;
 
@@ -20,24 +20,16 @@ using namespace std;
 #define snd second
 #define fore(i,a,b) for(ll i = a, jet = b; i < jet; i++)
 #define ALL(x) (x).begin(), (x).end()
-#define RALL(x) (x).rbegin(), (x).rend()
 #define SZ(x) (int)(x).size()
 #define imp(v) {for(auto i : v) cout << i << " "; cout << "\n";}
 #define inp(v) {for(auto &i : v) cin >> i;}
 
-
 typedef long long ll;
 typedef pair<ll,ll> ii;
 typedef vector<ll> vv;
-typedef vector<int> vi;
-typedef vector<ii> vii;
-typedef vector<string> vvs;
-typedef vector<set<ll>> vst;
 
-
-// const ll INF = 1e18;
-// const int MOD = 1e9 + 7;
-
+//const ll INF = 1e18;
+//const int MOD = 1e9 + 7;
 
 #ifdef LOCAL
 #define debug(x) cerr << #x << " = " << x << endl;
@@ -46,18 +38,28 @@ typedef vector<set<ll>> vst;
 #endif
 
 
+void solve() {
+    int n, k; cin >> n >> k;
+    ll ans = 0;
+    int num = 1;
+    while(k > 0){
+        if(num % n != 0){
+            ans = num;
+            k--;
+        }
+        num++;
+    }
 
-void solve(){
-    
+    cout << ans << endl;
 }
 
 int main() {
     fastio
-    
+
     int t = 1;
-    cin >> t;   
+    cin >> t;
     while (t--) {
-       solve();
+        solve();
     }
 
     return 0;
