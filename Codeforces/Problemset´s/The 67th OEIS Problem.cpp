@@ -42,24 +42,12 @@ void solve() {
     int n; cin >> n;
     vv ans;
     int num = 1;
-    if(n > 1){
-        ans.push_back(1);
-        
-    for(int i = 0 , count = 1, current = 1; count < n ; num++){
-        int val = ans[i];
-        if(__gcd(val,num) == current ){
-            ans.push_back(num);
-            i++;
-            count++;
-            current++;
-        }
-    }
-    
-    for(int i = 0; i < ans.size(); i++){
-        cout << ans.at(i) << " ";
-    }
-    cout << endl;
-}
+    int actual = 1;
+    vector<bool> primo(1e4+1, true);
+    for(int i = 1; i < n; )
+    ans.pb(1);
+    for(i)
+
 }
 
 int main() {
