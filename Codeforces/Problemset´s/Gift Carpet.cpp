@@ -49,33 +49,34 @@ void solve() {
     }   
     
   
-    for(int i = 0; i < n; i++){
-        for(int j = 0; j < m; j++){
+    for(int i = 0; i < m; i++){
+        for(int j = 0; j < n; j++){
             
             if(ans[j][i] == 'v' && st.empty()){
                 st.push('v');
-            }else
-            if(ans[j][i] == 'i' && st.empty() && st.top() == 'v'){
+                 break; 
+            }else if(ans[j][i] == 'i' && !st.empty() && st.top() == 'v'){
                 st.push('i');
+                 break; 
              
-            }else
-            if(ans[j][i] == 'k' && st.empty() && st.top() == 'i'){
+            }else if(ans[j][i] == 'k' && !st.empty() && st.top() == 'i'){
                 st.push('k');
+                 break; 
                 
-            }else
-            if(ans[j][i] == 'a' && st.empty() && st.top() == 'k'){
-                st.push('a');
-                 
+            }else if(ans[j][i] == 'a' && !st.empty() && st.top() == 'k'){
+                st.push('a');   
+                break; 
             }
-          
-            
+            // cout << " EN LA PILA HAY UNA " << st.top() << endl;
+            // cout << ans[j][i] << " ";
         }
+       // cout << endl;
     }
    
     
     
     
-    if(st.size() == 4 || n == 1){
+    if(st.size() == 4){
         cout << "YES" << endl;
     }else{
         cout << "NO" << endl;
