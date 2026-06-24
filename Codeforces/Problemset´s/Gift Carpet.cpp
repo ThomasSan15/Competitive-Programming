@@ -42,40 +42,39 @@ void solve() {
     int n, m; cin >> n >> m;
 
     stack<char> st;
-    vector<string> ans(n);
+    vector<string> ans (n);
     
     for(int i = 0; i < n; i++){
         cin >> ans[i];
     }   
     
-    for(int i = 0; i < m; i++){
-
-        for(int j = 0; j < n ;){
+  
+    for(int i = 0; i < n; i++){
+        for(int j = 0; j < m; j++){
             
             if(ans[j][i] == 'v' && st.empty()){
                 st.push('v');
-                break;
-            }
-            if(ans[j][i] == 'i' && st.top() == 'v'){
+            }else
+            if(ans[j][i] == 'i' && st.empty() && st.top() == 'v'){
                 st.push('i');
-                break;
-            }
-            if(ans[j][i] == 'k' && st.top() == 'i'){
+             
+            }else
+            if(ans[j][i] == 'k' && st.empty() && st.top() == 'i'){
                 st.push('k');
-                 break;
-            }
-            if(ans[j][i] == 'a' && st.top() == 'k'){
+                
+            }else
+            if(ans[j][i] == 'a' && st.empty() && st.top() == 'k'){
                 st.push('a');
-                 break;
+                 
             }
-            j++;
-            //cout << ans[j][i] << " ";
-        
+          
+            
         }
     }
    
-     
-    cout << st.size() << endl;
+    
+    
+    
     if(st.size() == 4 || n == 1){
         cout << "YES" << endl;
     }else{
