@@ -41,19 +41,25 @@ typedef vector<ll> vv;
 void solve() {
     double n,m,a,b; cin >> n >> m >> a >> b;
    
-    int ans1 = 0;
-    int ans2 = 0;
-    double aux = n;
-    while(aux > 0){
-         aux--;
-        ans1 += a;
-    }
-    while(n > 0){
-         n -= m;
-        ans2 += b;
+    int ans = 0; 
+    if(a*m <= b){
+        cout << fixed << setprecision(0) << a * n << endl;
+    }else{
+        while(n > 0){
+            if(n >= m){
+                n -= m;
+                ans += b;
+            }else if(a * n >= b){
+                n -= m;
+                ans += b;
+            }else{
+                ans += (a * n);
+                n = 0;
+            }
+        }
+        cout << fixed << setprecision(0) << ans << endl;
     }
 
-    cout << min(ans1,ans2) << endl;
 
 }
 
