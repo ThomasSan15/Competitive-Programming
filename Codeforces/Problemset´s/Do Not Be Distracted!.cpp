@@ -1,4 +1,4 @@
-//https://codeforces.com/problemset/problem/1878/C
+//https://codeforces.com/contest/1520/problem/A
 
 #include <bits/stdc++.h>
 // #include <iostream>
@@ -48,17 +48,24 @@ typedef vector<set<ll>> vst;
 
 
 void solve(){
-    ll n,k,x; cin  >> n >> k >> x;
+    int n; cin >> n;
+    string s; cin >> s;
+    vector<bool> letters(26,false);
 
-    ll sum = (k * ((n - k + 1) + n)) / 2; 
-    ll mins = (k * (k + 1)) / 2;
-   
-   
-        if(sum >= x && mins <= x){
-        cout << "YES" << endl;
-        }else{
-    cout << "NO" << endl;
+    for(int i = 0; i < n; i ++){
+        if(i == 0)letters[s[i] - 65] = true;
+        if(i > 0 && s[i] != s[i-1]){
+            if(letters[s[i] - 65]){
+                cout << "NO" << endl;
+                return;
+            }else{
+                letters[s[i] - 65] = true;
+            }
         }
+    }
+
+    cout << "YES" << endl;
+
 }
 
 int main() {

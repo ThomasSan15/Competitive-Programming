@@ -39,12 +39,22 @@ typedef vector<ll> vv;
 
 
 void solve() {
-    int n,m,a,b; cin >> n >> m >> a >> b;
-    double op1 = n * a;
-    double op2 = ceil(n/m) * b;
-    while(n > 0){
-        
+    double n,m,a,b; cin >> n >> m >> a >> b;
+   
+    int ans1 = 0;
+    int ans2 = 0;
+    double aux = n;
+    while(aux > 0){
+         aux--;
+        ans1 += a;
     }
+    while(n > 0){
+         n -= m;
+        ans2 += b;
+    }
+
+    cout << min(ans1,ans2) << endl;
+
 }
 
 int main() {
