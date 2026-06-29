@@ -51,7 +51,7 @@ void solve(){
     int n; cin >> n;
     string s; cin >> s;
     vv letters(26,0);
-     vv letters2(26,0);
+    vv letters2(26,0);
     int ans = 0;
     int op = 0 ;
     for(int i = 0; i < n; i++){

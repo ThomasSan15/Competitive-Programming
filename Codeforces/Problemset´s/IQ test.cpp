@@ -42,11 +42,24 @@ void solve() {
     int n; cin >> n;
     vv a(n);
     inp(a);
-    int od  =0;
-    int ev = 0;
+    int odd =0;
+    int even = 0;
+
     for(int i = 0; i < n;i++){
-        if(a[i] % 2 == 0 && a[i] != 2)ev = 1;
-        if(a[i] % 3 == 0 && a[i] != 3)od = 1;
+        for(int j = 0; j < n ; j++){
+            
+            if(j != i){
+                a[j] % 2 == 0 ? even++ : odd++;
+            }
+        }
+
+        if(odd == n - 1 || even == n - 1){
+            cout << i + 1 << endl;
+            return;
+        }else{
+            even = 0;
+            odd = 0;
+        }
         
     }
 }
