@@ -48,22 +48,7 @@ typedef vector<set<ll>> vst;
 
 
 void solve(){
-    int x, y; cin >> x >> y;
-
-    if(y > x){
-        cout << "NO" << endl;
-    }else{
-        if(y == x){
-            cout << "YES" << endl;
-        }else{
-            if(x % y == 0){
-                cout << "YES" << endl;
-            }else{
-                cout << "NO" << endl;
-            }
-        }
-
-    }
+    
 }
 
 int main() {

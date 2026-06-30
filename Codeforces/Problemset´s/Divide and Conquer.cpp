@@ -1,4 +1,4 @@
-//
+//https://codeforces.com/contest/2241/problem/A
 
 #include <bits/stdc++.h>
 // #include <iostream>
@@ -45,19 +45,25 @@ typedef vector<set<ll>> vst;
 #define debug(x)
 #endif
 
-int countdi(ll x){
-    int count = 0;
-    while(x > 0){
-        count++;
-        x /=10;
-    }
-    return count;
-}
+
 
 void solve(){
-    int x; cin >> x;
+    int x, y; cin >> x >> y;
 
-    cout << fixed << setprecision(0) << pow(10,countdi(x))+1 << endl;
+    if(y > x){
+        cout << "NO" << endl;
+    }else{
+        if(y == x){
+            cout << "YES" << endl;
+        }else{
+            if(x % y == 0){
+                cout << "YES" << endl;
+            }else{
+                cout << "NO" << endl;
+            }
+        }
+
+    }
 }
 
 int main() {
@@ -65,7 +71,6 @@ int main() {
     
     int t = 1;
     cin >> t;
-    
     while (t--) {
        solve();
     }
