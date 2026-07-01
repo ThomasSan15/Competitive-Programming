@@ -1,4 +1,4 @@
-//
+//https://codeforces.com/problemset/problem/1783/A
 
 #include <bits/stdc++.h>
 // #include <iostream>
@@ -48,6 +48,41 @@ typedef vector<set<ll>> vst;
 
 
 void solve(){
+    int n; cin >> n; 
+    vv a(n);
+    inp(a);
+
+    vv aux = a;
+    vv ans;
+    vv prefix(n+1,0);
+    int f = 0;
+    for(int i = 1; i <= n; i++){
+        prefix[i] = prefix[i-1] + a[i-1];
+        if( i < n && a[i] == prefix[i]){
+            f = 1;
+        }
+    }
+    if(!f){
+        cout << "YES" << endl;
+        imp(a);
+       
+    }else{
+    sort(ALL(aux));
+    ans.pb(aux[0]);
+    sort(RALL(aux));
+ 
+    
+    for(int i = 0; i < n -1; i++){
+        ans.pb(aux[i]);
+    }
+
+    if(ans == a){
+        cout << "NO" << endl;
+    }else{
+        cout << "YES" << endl;
+        imp(ans);
+    }
+}
     
 }
 
