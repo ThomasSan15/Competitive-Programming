@@ -1,16 +1,16 @@
-//https://codeforces.com/contest/1766/problem/A
+//https://codeforces.com/problemset/problem/1766/A
 
 #include <bits/stdc++.h>
-//#include <iostream>
-//#include <algorithm>
-//#include <complex>
-//#include <map>
-//#include <set>
-//#include <string>
-//#include <vector>
-//#include <numeric>
-//#include <array>
-//#include <cassert>
+// #include <iostream>
+// #include <algorithm>
+// #include <complex>
+// #include <map>
+// #include <set>
+// #include <string>
+// #include <vector>
+// #include <numeric>
+// #include <array>
+// #include <cassert>
 
 using namespace std;
 
@@ -20,16 +20,24 @@ using namespace std;
 #define snd second
 #define fore(i,a,b) for(ll i = a, jet = b; i < jet; i++)
 #define ALL(x) (x).begin(), (x).end()
+#define RALL(x) (x).rbegin(), (x).rend()
 #define SZ(x) (int)(x).size()
 #define imp(v) {for(auto i : v) cout << i << " "; cout << "\n";}
 #define inp(v) {for(auto &i : v) cin >> i;}
 
+
 typedef long long ll;
 typedef pair<ll,ll> ii;
 typedef vector<ll> vv;
+typedef vector<int> vi;
+typedef vector<ii> vii;
+typedef vector<string> vvs;
+typedef vector<set<ll>> vst;
 
-//const ll INF = 1e18;
-//const int MOD = 1e9 + 7;
+
+// const ll INF = 1e18;
+// const int MOD = 1e9 + 7;
+
 
 #ifdef LOCAL
 #define debug(x) cerr << #x << " = " << x << endl;
@@ -38,36 +46,27 @@ typedef vector<ll> vv;
 #endif
 
 
-void solve() {
-    int n; cin >> n;
-    int ans = 0;
-    vv extremr;
 
-    for(int i = 1; i < n; )
-    if(n > 10){
-        ans = 10;
-        for(int i = 10; i <= n;){
-            if(i + 10 <= n){
-            ans++;
-            i += 10;
-        }else{
-            break;
-        }
-    }
-        cout << ans << endl;
-    }else{
-        cout << n << endl;
-    }
+void solve(){
+    int n;
+    cin >> n;
+
+    string s = to_string(n);
+
+    int len = s.size();
+    int first = s[0] - '0';
+
+    cout << 9 * (len - 1) + first << '\n';
 
 }
 
 int main() {
     fastio
-
+    
     int t = 1;
     cin >> t;
     while (t--) {
-        solve();
+       solve();
     }
 
     return 0;
