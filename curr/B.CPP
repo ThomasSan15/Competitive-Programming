@@ -48,47 +48,7 @@ typedef vector<set<ll>> vst;
 
 
 void solve(){
-    int n; cin >> n;
-    vv a(n);
-    inp(a);
-    vv prefix1 (n+1,0);
-    vv prefix2 (n+1,0);
-    int mx[n+1];
-
-    for(int i =1 ; i <= n; i++){
-        if(a[i - 1] == 1){
-            prefix1[i] = prefix1[i-1] + 1;
-            prefix2[i] = prefix2[i-1] + 1;
-        }
-        if(a[i-1] == 2){
-            prefix1[i] = prefix1[i-1] - 1;
-            prefix2[i] = prefix2[i-1] + 1;
-        }
-
-         if(a[i-1] == 3){
-            prefix1[i] = prefix1[i-1] - 1;
-            prefix2[i] = prefix2[i-1] - 1;
-        }
-       
-    }
-
-    mx[n - 1] = prefix2[n - 1];
-    int val1, val2;
-
-    for (int i = n - 2; i >= 1; i--) {
-        val1 = mx[i+1];
-        val2 = prefix2[i];
-        mx[i] = max(val1,val2);
-    }
-
-    for(int i = 1; i <= n -2 ;i++ ){
-       if(prefix1[i] >= 0 && mx[i+1] >= prefix2[i]){
-        cout << "YES" << endl;
-        return;
-       }
-    }
     
-    cout << "NO" << endl;
 }
 
 int main() {
