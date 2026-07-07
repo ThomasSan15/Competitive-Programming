@@ -1,4 +1,4 @@
-//
+//https://codeforces.com/problemset/problem/1850/D
 
 #include <bits/stdc++.h>
 // #include <iostream>
@@ -48,7 +48,25 @@ typedef vector<set<ll>> vst;
 
 
 void solve(){
-    
+    int n, k; cin >> n >> k;
+    vv a(n);
+    inp(a);
+
+    sort(ALL(a));
+    int ans = 1;
+    int count = 1;
+   // imp(a);
+
+    for(int i = 1; i < n; i++){
+        if(abs(a[i] - a[i-1]) > k){
+            count = 1;
+        }else{
+            count++;
+        }
+
+        ans = max(ans,count);
+    }
+    cout << n-ans  << endl;
 }
 
 int main() {
