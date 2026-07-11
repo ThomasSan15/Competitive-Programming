@@ -40,24 +40,26 @@ typedef vector<ll> vv;
 
 void solve() {
     int n, k; cin >> n >> k;
-    vv a(n);
-    inp(a);
-    vv ans;
-
-        int mod = 0;
-        while(mod < k ){
-
-        for(int i= 0; i < n; i++){
-            
-            if(a[i] % k == mod){
-                ans.pb(i+1);
-            }
-        }
-        mod++;
+    vector<pair<int,int>> a(n);
+    
+    for(int i = 0; i < n;i++){
+        cin >> a[i].first;
+        a[i].first = (a[i].first % k == 0 ? k : a[i].first % k);
+        a[i].second = i+1;
     }
 
+    sort(ALL(a), [](const pair<int,int> & v1, const pair<int,int>& v2){
+        if(v1.first != v2.first)
+            return v1.first > v2.first;
+        return v1.second < v2.second;
+    });
 
-    imp(ans);
+
+     for(int i = 0; i < n;i++){
+        cout << a[i].second << " ";
+    }
+           
+    cout << endl;
 
 }
 
