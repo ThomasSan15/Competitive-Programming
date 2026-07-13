@@ -39,12 +39,15 @@ typedef vector<ll> vv;
 
 
 void solve() {
-    ll n, k; cin >> n >> k;
+    ll n = 0, k = 0; cin >> n >> k;
     
-    if(n%2 == 0){
-        if(k <= n / 2){
-            cout << n - 1 - (2*k);
-        }
+    if(k > (n/2)){
+       
+        k -= ceil(n/2.);
+        
+        cout << (k == 0 ? n : 2 * k) << endl;
+    }else{
+        cout << 2*k  - 1 << endl;
     }
 
 }
