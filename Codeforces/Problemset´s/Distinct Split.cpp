@@ -50,29 +50,37 @@ typedef vector<set<ll>> vst;
 void solve(){
     int n; cin >> n;
     string s; cin >> s;
+    int ans = 0;
     vv letters(26,0);
     vv letters2(26,0);
-    int ans = 0;
-    int op = 0 ;
-    for(int i = 0; i < n; i++){
-        if(i == 0){
-            ans++;
-            letters[s[i] - 97]++;
-        }else if( op == 0 && i > 0 && letters[s[i] - 97] < 1 ){
-            ans++;
-            letters[s[i] - 97]++;
-             //cout << s[i] << " ";
+   
+    vv prefix(n+1,0);
+    vv sufix(n+1,0);
+
+    for(int i = 0, j = n-1; i < n; i++,j--){
+        if(letters[s[i] - 97] == 0){
+            prefix[i+1] = prefix[i] + 1;
+            letters[s[i]-97]++;
         }else{
-            op = 1;
+            prefix[i+1] = prefix[i];
         }
-        
-        if(op == 1 && letters2[s[i] - 97] < 1){
-            letters2[s[i] - 97]++;
-            ans++;
-            //cout << " L2 " << s[i] << " ";
+
+        if(letters2[s[j] - 97] == 0){
+           // cout << " LETRA " << s[j] << endl;
+            sufix[j] = sufix[j+1] + 1;
+            letters2[s[j]-97]++;
+        }else{
+            sufix[j] = sufix[j+1];
         }
     }
+    for(int i = 0; i < n+1; i++){
+        int val = prefix.at(i) + sufix.at(i);
+        ans = max(ans, val);
+    }
+    
     cout << ans << endl;
+
+   
 }
 
 int main() {
