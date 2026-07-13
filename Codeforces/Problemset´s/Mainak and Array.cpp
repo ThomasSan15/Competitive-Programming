@@ -49,13 +49,30 @@ typedef vector<set<ll>> vst;
 
 void solve(){
     int n; cin >> n;
-    vv a(n);
+    vector<int> a(n);
     inp(a);
 
-    int mn = *min_element(ALL(a));
-    int mx = *max_element(ALL(a));
+    int ans1 = 0;
+    int ans2 = 0;
+    int ans3 = 0;
+    int ans4 = 0;
 
-    cout << mx- mn << endl;
+    for(int i = 0; i < n-1; i++){
+       ans1 = max(ans1, a[n-1] - a[i]);
+    }
+
+     for(int i = 1; i < n; i++){
+        ans2 = max(ans2, a[i] - a[0]);
+    }
+
+    ans3 = a[n-1] - a[0];
+
+    for(int i = 0; i < n; i++){
+        i == 0? ans4 = a[n-1] - a[i] : ans4 = max(ans4, a[i-1] - a[i]);
+    }
+
+
+    cout << max(max(ans1,ans2), max(ans3,ans4)) << endl;
 }
 
 int main() {
