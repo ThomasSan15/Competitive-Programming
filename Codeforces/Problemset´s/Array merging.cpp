@@ -53,31 +53,38 @@ void solve(){
     vv b(n);
     inp(a);
     inp(b);
+    vv counta (2*n + 1,0);
+    vv countb (2*n + 1,0);
+    int aux1 = 1;
+    int aux2 = 1;
+    int auxm = 0;
+    int ans = 0;
 
-    int counta = 0;
-    int countb = 0;
-    int auxa = 0;
-    int auxb = 0;
     for(int i = 0; i < n; i++){
-        if(i < n - 1 && a[i] == a[i + 1] ){
-            auxa++;
-            }else{
-                counta = max(counta, auxa);
-                auxa = 0;
-             }
-        if(i < n - 1 && b[i] == b[i + 1] ){
+        if(counta[a[i]] == 0)counta[a[i]] = 1;
+        if(countb[b[i]] == 0)countb[b[i]] = 1;
+        if(i < n - 1 && a[i] == a[i+1])aux1++;
+            else{
+            auxm = counta[a[i]];
+            counta[a[i]] = max(auxm, aux1);
+            aux1 = 1;
+         }
 
-            auxb++;
-        }else{
-            countb = max(countb, auxb);
-                auxb = 0;
-        }
+         if(i < n - 1 && b[i] == b[i+1])aux2++;
+            else{
+                auxm = countb[b[i]];
+                countb[b[i]] = max(auxm,aux2);
+                aux2 = 1;
+            }
     }
 
-    counta = max(counta,auxa);
-     countb = max(countb,auxb);
+    for(int i = 1; i <= 2*n; i++){
+     //  cout << " VALOR : "<< i << " COUNT A " << counta[i] << " COUNT B " << countb[i] << endl; 
+        aux1 = counta[i] + countb[i];
+        ans = max(ans,aux1);
+    }
+    cout << ans << endl;
 
-     cout << counta + countb;
 }
 
 int main() {
