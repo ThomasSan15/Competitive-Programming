@@ -54,28 +54,11 @@ void solve(){
     int q; cin >> q;
     int target = 0;
     sort(ALL(a));
-
+ 
     while(q--){
-    int low = 0;
-    int high = n - 1;
-    int mid = 0;
-
+ 
         cin >> target;
-        while(low <= high){
-            mid = low + (high - low) / 2;
-
-            if(target == a[mid]){
-                target = -1;
-                break;
-            }else{
-                if(target < a[mid]){
-                    high = mid - 1;
-                }else{
-                    low = mid + 1;
-                }
-            }
-        }
-        cout << (target == -1? mid + 1: 0) << endl;
+        cout << upper_bound(ALL(a), target) - a.begin() << endl;
     }
 }
 
