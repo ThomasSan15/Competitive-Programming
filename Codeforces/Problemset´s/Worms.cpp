@@ -47,29 +47,54 @@ typedef vector<set<ll>> vst;
 
 
 
-void solve(){
-    int n; cin >> n;
-    vv a(n);
-    vv ans;
-    int val = 1;
-    int query = 0;
+    void solve(){
+        int n; cin >> n;
+        vv a(n);
+        vv ans;
+        int val = 1;
+        int query = 0;
 
-    for(int i = 0; i < n; i++){
-        cin >> a[i];
+        for(int i = 0; i < n; i++){
+            cin >> a[i];
 
-            for(int j = 1; j <= a[i]; j++){
-                ans.pb(val);
-            }
-        val++;
+                for(int j = 1; j <= a[i]; j++){
+                    ans.pb(val);
+                }
+            val++;
+        }
+
+        
+        cin >> query;
+        while(query--){
+            cin >> val;
+            cout << ans[val - 1] << endl;
+        }
     }
 
+// ANOTHER SOLUTION "USING BINARY SEARCH":
+
+    // void solve(){
+    //      int n; cin >> n;
+    //      vv a(n);
+    //      vv prefix(n+1,0);
+    //      inp(a);
+    //      int query = 0;
+    //      int val = 0;
+
+    //      for(int i = 1; i <= n ; i++){
+    //         prefix[i] = prefix[i-1] + a[i-1];
+    //      }
+        
+    //      cin >> query;
     
-    cin >> query;
-    while(query--){
-        cin >> val;
-        cout << ans[val - 1] << endl;
-    }
-}
+    //      while(query--){
+    //         cin >> val;
+    //         cout << lower_bound(ALL(prefix), val) - prefix.begin() << endl;
+    //      }
+         
+
+    // }
+
 
 int main() {
     fastio
