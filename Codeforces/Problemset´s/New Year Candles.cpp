@@ -40,19 +40,26 @@ typedef vector<ll> vv;
 
 void solve() {
     int a, b; cin >> a >> b;
-    int ans = a;
-    double aux = 0.0;
-    int cura = a;
-    int curb = 0;
-    while(a > 0){
-       curb += a;
-       cura = curb /b;
-       curb = curb % b;
-       ans += cura;
-       
-    }
+    double ans = a;
+    int f = 1;
+    double aux = a;
 
-    cout << ans << endl;
+
+    while(f){
+        f = 0;
+        if(aux >= b){
+            ans += aux / (b * 1.0);
+           
+            f = 1;
+            aux = aux / (b * 1.0);
+           
+            
+          
+        }
+    }
+    
+
+    cout << ceil(ans) << endl;
 }
 
 int main() {
