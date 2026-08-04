@@ -40,18 +40,18 @@ typedef vector<ll> vv;
 
 void solve() {
     int a, b; cin >> a >> b;
-    double ans = a;
+    int ans = a;
     int f = 1;
-    double aux = a;
+    int aux = a;
 
 
     while(f){
         f = 0;
         if(aux >= b){
-            ans += aux / (b * 1.0);
+            ans += aux / b ;
            
             f = 1;
-            aux = aux / (b * 1.0);
+           aux = aux % b + aux / b;
            
             
           
@@ -59,7 +59,7 @@ void solve() {
     }
     
 
-    cout << ceil(ans) << endl;
+    cout << ans << endl;
 }
 
 int main() {
