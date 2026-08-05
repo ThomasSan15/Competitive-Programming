@@ -61,6 +61,16 @@ void solve(){
     cout << ans << endl;
 }
 
+//Best solution = 
+/*
+vv tokens (3,0);
+    inp(tokens);
+    sort(ALL(tokens));
+    
+    cout << min(tokens[1] - tokens[0], tokens[2]-tokens[1]);
+
+    */
+
 int main() {
     fastio
     
