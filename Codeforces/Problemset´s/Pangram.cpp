@@ -1,4 +1,4 @@
-//https://codeforces.com/problemset/problem/1690/D
+//https://codeforces.com/problemset/problem/520/A
 
 #include <bits/stdc++.h>
 // #include <iostream>
@@ -45,54 +45,45 @@ typedef vector<set<ll>> vst;
 #define debug(x)
 #endif
 
-void word(int l,int r, string s){
-    for(; l <= r; l++){
-        cout << s[l];
-    }
-    cout << endl;
-}
+
 
 void solve(){
-    int n, k; cin >> n >> k;
-    string s;
-    cin >> s;
-    int ans = 0;
-    int aux = 0;
+    int n; cin >> n;
+    string s; cin >> s;
 
-    for(int i = 0; i < k; i++){
-        if(s[i] == 'W') aux++;
-    }
-    ans = aux;
-    cout << ans << endl;
-   
-    for(int l = 0, r = k-1; r < n - 1; r++, l++){
-            if(l < n - k  && s[l] == 'W' && s[l+1] == 'B'){
-                aux--;
-                cout << "valor desp de l " << aux ;
+    if(n < 26){
+        cout << "NO" << endl;
+        return;
+    }else{
+        vv used(26,0);
+        int ans = 26;
+
+        fore(i,0,n){
+            if(s[i] < 'a'){
+                if(!used[s[i] - 'A']){
+                    used[s[i] - 'A']++;
+                    ans--;
+                }
+            }else{
+                if(!used[s[i] - 'a']){
+                    used[s[i] - 'a']++;
+                    ans--;
+                }
             }
-
-            if( s[r] == 'B' && s[r+1] == 'W'){
-                aux++;
-                }else if(r >= n - k  && s[r] == 'W' && s[r+1] == 'B')aux--;
-                cout << "valor desp de r " << aux << endl;
-                word(l+1,r+1,s);
-
-        ans = min(aux,ans);
+        }
+        
+        cout << (ans ? "NO": "YES") << endl;
     }
-
-    cout << ans << " palabra " << s << endl;
+    
 }
 
 int main() {
     fastio
     
     int t = 1;
-    cin >> t;
-    int i  = 1;
+  
     while (t--) {
-        cout << "Prueba " << i << "= ";
-        solve();
-        i++;
+       solve();
     }
 
     return 0;
