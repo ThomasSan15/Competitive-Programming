@@ -63,24 +63,22 @@ void solve(){
         if(s[i] == 'W') aux++;
     }
     ans = aux;
-    cout << ans << endl;
    
     for(int l = 0, r = k-1; r < n - 1; r++, l++){
-            if(l < n - k  && s[l] == 'W' && s[l+1] == 'B'){
+
+          if(l < n - 1 && s[l] == 'W' ){ 
                 aux--;
-                cout << "valor desp de l " << aux ;
-            }
-
-            if( s[r] == 'B' && s[r+1] == 'W'){
+                }
+    
+            if(r < n - 1  && s[r+1] == 'W'){
                 aux++;
-                }else if(r >= n - k  && s[r] == 'W' && s[r+1] == 'B')aux--;
-                cout << "valor desp de r " << aux << endl;
-                word(l+1,r+1,s);
-
+                }
+ 
         ans = min(aux,ans);
+
     }
 
-    cout << ans << " palabra " << s << endl;
+    cout << ans  << endl;
 }
 
 int main() {
@@ -90,9 +88,9 @@ int main() {
     cin >> t;
     int i  = 1;
     while (t--) {
-        cout << "Prueba " << i << "= ";
+      
         solve();
-        i++;
+        
     }
 
     return 0;
