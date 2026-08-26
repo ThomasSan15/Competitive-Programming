@@ -48,18 +48,13 @@ typedef vector<set<ll>> vst;
 
 
 void solve(){
-    int x, y; cin >> x >> y;
-    int a,b; cin >> a >> b;
+    ll x, y; cin >> x >> y;
+    ll a,b; cin >> a >> b;
     
     if(a * 2 * 1LL <= b){
-        cout << a * (abs(x) + abs(y)) << endl
+        cout << a * (abs(x) + abs(y)) << endl;
     }else{
-        int distance = 0;
-        int ans = 0;
-
-        
-
-        cout << ans << endl;
+        cout << a * (max(abs(x) , abs(y)) - min(abs(x), abs(y))) +  b * min(abs(x), abs(y)) << endl;
     }
 }
 
