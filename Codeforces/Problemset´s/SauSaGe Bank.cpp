@@ -49,10 +49,18 @@ typedef vector<set<ll>> vst;
 
 void solve(){
     int n, k; cin >> n >> k;
-    ll ans = pow(2,n - 1);
-    k--;
-    ans += 2 * k;
-    cout <<  ans  << endl;
+    ll ans = 0;
+
+   for(int i = n; i >= 1; i--){
+     if(k != 1){
+        ans += 2;
+        k--;
+     }else{
+        ans += pow(2, i);
+        break;
+     }
+   }
+   cout << ans << endl;
 }
 
 int main() {
