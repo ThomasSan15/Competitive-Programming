@@ -57,7 +57,9 @@ void solve(){
     }
     cout << (ans == 0? -1 : ans) << endl;
 }
-
+/* Best solution
+    cout << min(b, a-b) << endl;
+*/
 int main() {
     fastio
     
