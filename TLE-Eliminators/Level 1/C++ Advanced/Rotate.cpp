@@ -40,16 +40,40 @@ typedef vector<ll> vv;
 
 void solve() {
     int n; cin >> n;
-    vector<vector<int>> matrix (n, vector<int>(n,0));
-    vector<vector<int>> aux (n, vector<int>(n,0));
-    for(int i = 0; i < n;)
+    int matriz [n][n]
+    for(int i = 0; i < n; i++){
+        for(int j = 0; j < n; j++){
+            cin >> matriz[i][j];
+        }
+    }
+
+    for(int i = 0; i < n; i++){
+        for(int j = 0; j < n; j++){
+           if(i == 0 && j == 0) cout << matriz[i+1][j];
+           else if(i == 1 && j == n - 1) cout << matriz[i-1] 
+           else if(i == n - 1 && j == n - 1) cout << matriz[i-1][j];
+           else if()
+           else if(i == 0) cout << matriz[i][j-1];
+          
+           else if(i == n - 1)cout << matriz[i][j+1];
+           else if(j == 0)cout << matriz[]
+
+
+
+           else{
+            cout << matriz[i][j];
+           }
+        }
+        cout << endl;
+    }
+
 }
 
 int main() {
     fastio
 
     int t = 1;
-    cin >> t;
+   
     while (t--) {
         solve();
     }
