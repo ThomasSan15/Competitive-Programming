@@ -39,26 +39,25 @@ typedef vector<ll> vv;
 
 
 void solve() {
+    
     int n; cin >> n;
-    int matriz [n][n]
+    string matriz [n];
+    
     for(int i = 0; i < n; i++){
-        for(int j = 0; j < n; j++){
-            cin >> matriz[i][j];
-        }
+            cin >> matriz[i];
     }
-
+   
     for(int i = 0; i < n; i++){
         for(int j = 0; j < n; j++){
            if(i == 0 && j == 0) cout << matriz[i+1][j];
-           else if(i == 1 && j == n - 1) cout << matriz[i-1] 
-           else if(i == n - 1 && j == n - 1) cout << matriz[i-1][j];
-           else if()
-           else if(i == 0) cout << matriz[i][j-1];
-          
+           else if(i == 1 && j == n - 1) cout << matriz[i-1][j]; 
+           else if(i == n - 2 && j == 0) cout << matriz[i+1][j];
+           else if(n > 2 && i == 1 && j == 0)cout<< matriz[i+1][j]; 
+
+           else if(i == 0) cout << matriz[i][j-1];  
+           else if(j == n-1)cout<< matriz[i-1][j];  
+           else if(j == 0 && i != n - 1)cout << matriz[i+1][j];
            else if(i == n - 1)cout << matriz[i][j+1];
-           else if(j == 0)cout << matriz[]
-
-
 
            else{
             cout << matriz[i][j];
