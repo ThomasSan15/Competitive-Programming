@@ -49,25 +49,27 @@ typedef vector<set<ll>> vst;
 
 void solve(){
   int r, c; cin >> r >> c;
+  vvs matriz (r);
+  vvs mt2 (r);
+
+  for(int i = 0; i < r; i++){
+        cin >> matriz[i];
+  }
+
+  for(int i = 0; i < r; i++){
+        cin >> mt2[i];
+  }
+
+  sort(ALL(matriz));
+  sort(ALL(mt2));
+  for(int i = 0; i < r; i++){
+        cout << matriz[i] << endl;
+  }
+  cout << endl;
+  for(int i = 0; i < r; i++){
+        cout << mt2[i] << endl;
+  }
   
-  vector<vector<char>> mat (r*2, vector<char> (c));
-    int count1 = 0, count2 = 0;
-  for(int i = 0; i < r*2; i++){
-    for(int j = 0; j < c; j++){
-    if(i < r){
-        cin >> mat[i][j];
-        if(mat[i][j] == '#')count1++;
-            }
-    else{
-        cin >> mat[i][j];
-        if(mat[i][j] == '#')count2++;
-
-            }
-        }
-    }
-    cout << count1 << " " << count2 << endl;
-
-    cout << (count1 == count2? "Yes" : "No") << endl;
 }
 
 int main() {
