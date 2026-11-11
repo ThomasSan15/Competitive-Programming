@@ -45,7 +45,12 @@ typedef vector<set<ll>> vst;
 #define debug(x)
 #endif
 
+bool check(vvs mat, vvs b, int r){
 
+      for(int i = r, moves = 0; moves < mat.size(); moves++, r++){
+            
+      }
+}
 
 void solve(){
   int r, c; cin >> r >> c;
